@@ -19,6 +19,7 @@ UI for Bala Asha App
    ```
 
 3. Fork the GitHub Repository. Instructions for same are [available here](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
+
    ![fork.png](src/assets/img/doc/fork.png)
 
 4. Clone the repository in your local (via cmd/terminal)
