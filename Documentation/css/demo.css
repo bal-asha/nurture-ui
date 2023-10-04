@@ -5,10 +5,10 @@
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2022 MNG (https://www.creative-tim.com)
+* Copyright 2022 Bal-Asha (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
 
-* Coded by MNG
+* Coded by Bal-Asha
 
 =========================================================
 

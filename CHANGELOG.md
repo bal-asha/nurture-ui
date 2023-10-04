@@ -55,8 +55,8 @@
 - reactstrap@8.9.0 (as part of the react-notification-alert)
 - jquery@3.5.1 (since Bootstrap requires it)
 - @fortawesome/fontawesome-free@5.15.2 (For easier update of the package - instead of a link inside public/index.html)
-- gulp-append-prepend@1.0.8 (For MNG licenses)
-- gulp@4.0.2 (For MNG licenses)
+- gulp-append-prepend@1.0.8 (For Bal-Asha licenses)
+- gulp@4.0.2 (For Bal-Asha licenses)
 
 ### Updated dependencies
 
@@ -243,4 +243,4 @@ const localizer = momentLocalizer(moment);
 ### Original Release
 
 - Added React-Bootstrap as base framework
-- Added design from Light Bootstrap Dashboard by MNG
+- Added design from Light Bootstrap Dashboard by Bal-Asha

@@ -7,7 +7,7 @@
 -->
 
 <!--
-Love MNG? Do you need Angular, React, Vuejs or HTML? You can visit:
+Love Bal-Asha? Do you need Angular, React, Vuejs or HTML? You can visit:
 👉  https://www.creative-tim.com/bundles
 👉  https://www.creative-tim.com
 -->

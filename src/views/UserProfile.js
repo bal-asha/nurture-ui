@@ -130,9 +130,8 @@ function User() {
                         <label>About Me</label>
                         <Form.Control
                           cols="80"
-                          defaultValue="Lamborghini Mercy, Your chick she so thirsty, I'm in
-                          that two seat Lambo."
-                          placeholder="Here can be your description"
+                          defaultValue="Employee at Bal Asha"
+                          placeholder="Admin at Bal Asha. Manages number of Super-indent"
                           rows="4"
                           as="textarea"
                         ></Form.Control>
@@ -172,9 +171,9 @@ function User() {
                   <p className="description">michael24</p>
                 </div>
                 <p className="description text-center">
-                  "Lamborghini Mercy <br></br>
-                  Your chick she so thirsty <br></br>
-                  I'm in that two seat Lambo"
+                  "<b>Admin</b> <br></br>
+                  Employee at Bal Asha <br></br>
+                  Mumbai, MH, India"
                 </p>
               </Card.Body>
               <hr></hr>

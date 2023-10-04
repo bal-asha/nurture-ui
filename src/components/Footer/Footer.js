@@ -5,10 +5,10 @@
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2022 MNG (https://www.creative-tim.com)
+* Copyright 2022 Bal-Asha (https://www.creative-tim.com)
 * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
 
-* Coded by MNG
+* Coded by Bal-Asha
 
 =========================================================
 
@@ -48,7 +48,7 @@ class Footer extends Component {
             </ul>
             <p className="copyright text-center">
               © {new Date().getFullYear()}{" "}
-              <a href="http://www.creative-tim.com">MNG</a>, made with
+              <a href="http://www.creative-tim.com">Bal-Asha</a>, made with
               love for a better web
             </p>
           </nav>

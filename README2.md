@@ -15,7 +15,7 @@ CMS or CRM.
 The product represents a big suite of front-end developer tools that can help you jump start your project. We have
 created it thinking about things you actually need in a dashboard. Light Bootstrap Dashboard React contains multiple
 handpicked and optimized plugins. Everything is designed to fit with one another. As you will be able to see, the
-dashboard you can access on MNG is a customization of this product.
+dashboard you can access on Bal-Asha is a customization of this product.
 
 It comes with 6 filter colors for the sidebar (`black`, `azure`,`green`,`orange`,`red`,`purple`) and an option to have a
 background image.
@@ -56,7 +56,7 @@ Quick start options:
 
 - Clone the repo: `git clone https://github.com/creativetimofficial/light-bootstrap-dashboard-react.git`.
 - [Download from Github](https://github.com/creativetimofficial/light-bootstrap-dashboard-react/archive/master.zip).
-- [Download from MNG](https://www.creative-tim.com/product/light-bootstrap-dashboard-react?ref=lbdr-readme).
+- [Download from Bal-Asha](https://www.creative-tim.com/product/light-bootstrap-dashboard-react?ref=lbdr-readme).
 
 ## Documentation
 
@@ -169,12 +169,12 @@ please [contact us](https://www.creative-tim.com/contact-us?ref=lbdr-readme) ins
 
 ## Licensing
 
-- Copyright 2022 MNG (https://www.creative-tim.com?ref=lbdr-readme)
+- Copyright 2022 Bal-Asha (https://www.creative-tim.com?ref=lbdr-readme)
 - Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
 
 ## Useful Links
 
-More products from MNG: <https://www.creative-tim.com/products?ref=lbdr-readme>
+More products from Bal-Asha: <https://www.creative-tim.com/products?ref=lbdr-readme>
 
 Tutorials: <https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w>
 
