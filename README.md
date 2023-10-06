@@ -1,8 +1,8 @@
-# Nurture-UI [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https%3A%2F%2Fcreativetimofficial.github.io%2Flight-bootstrap-dashboard-react&text=Light%20Bootstrap%20Dashboard%20React%20-%20Free%20Bootstrap%20Admin%20Template&original_referer=https%3A%2F%2Fdemos.creative-tim.com%2Flight-bootstrap-dashboard-react%2F&via=creativetim&hashtags=react%2Cbootstrap%2Creact-bootstrap%2Ccreativetim%2Ccreative-tim)
+# [BalAsha - Nurture](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/soft-ui-dashboard-pro-react&text=Check%20Soft%20UI%20Dashboard%20Pro%React%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#softdesign%20#react%20https://www.creative-tim.com/product/soft-ui-dashboard-pro-react)
 
-![version](https://img.shields.io/badge/version-2.0.1-blue.svg) ![license](https://img.shields.io/badge/license-MIT-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/light-bootstrap-dashboard-react.svg?maxAge=2592000)]() [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/light-bootstrap-dashboard-react.svg?maxAge=2592000)]() [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
+![version](https://img.shields.io/badge/version-4.0.2-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/ct-soft-ui-dashboard-pro-react.svg)](https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/ct-soft-ui-dashboard-pro-react.svg)](https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/issues?q=is%3Aissue+is%3Aclosed)
 
-![Product Gif](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/light-bootstrap-dashboard-react/light-bootstrap-dashboard-react.gif)
+![Image](https://s3.amazonaws.com/creativetim_bucket/products/499/original/soft-ui-dashboard-pro-material-ui.jpg)
 
 UI for Bala Asha App
 
@@ -42,22 +42,59 @@ UI for Bala Asha App
    ```
 
 
-## Some Details about underlying framework - [Light Bootstrap Dashboard React](https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/?ref=lbdr-readme) 
-**[Light Bootstrap Dashboard React](https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/?ref=lbdr-readme)**
-is an admin dashboard template designed to be beautiful and simple. It is built on top
-of [React Bootstrap](https://5c507d49471426000887a6a7--react-bootstrap.netlify.com/),
-using [Light Bootstrap Dashboard](https://www.creative-tim.com/product/light-bootstrap?ref=lbdr-readme) and it is fully
-responsive. It comes with a big collections of elements that will offer you multiple possibilities to create the app
-that best fits your needs. It can be used to create admin panels, project management systems, web applications backend,
-CMS or CRM.
+## Some Details about underlying framework
+Start your Development with an Innovative Admin Template for MUI and React. If you like the look & feel of the hottest design trend right now, Soft UI, you will fall in love with this dashboard! It features a huge number of components built to fit together and look amazing.
 
-The product represents a big suite of front-end developer tools that can help you jump start your project. We have
-created it thinking about things you actually need in a dashboard. Light Bootstrap Dashboard React contains multiple
-handpicked and optimized plugins. Everything is designed to fit with one another. As you will be able to see, the
-dashboard you can access on Bal-Asha is a customization of this product.
+**Fully Coded Elements**
+BalAsha - Nurture is built with over 300 frontend individual elements, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using MUI styled api and sx prop. You will save a lot of time going from prototyping to full-functional code because all elements are implemented. This Premium MUI Dashboard is coming with prebuilt design blocks, so the development process is seamless, switching from our pages to the real website is very easy to be done.
 
-It comes with 6 filter colors for the sidebar (`black`, `azure`,`green`,`orange`,`red`,`purple`) and an option to have a
-background image.
+View [all components here](https://www.creative-tim.com/learning-lab/react/alerts/soft-ui-dashboard/).
+
+**Documentation built by Developers**
+
+Each element is well presented in very complex documentation.
+
+You can read more about the [documentation here](https://www.creative-tim.com/learning-lab/react/overview/soft-ui-dashboard/).
+
+**Example Pages**
+
+If you want to get inspiration or just show something directly to your clients, you can jump-start your development with our pre-built example pages. Every page is spaced well, with attractive layouts and pleasing shapes. From specially designed dashboards for smart homes, virtual reality, and automotives to CRM admins, BalAsha - Nurture has everything you need to quickly set up an amazing project.
+
+View [example pages here](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default).
+
+**HELPFUL LINKS**
+
+- View [Github Repository](https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react)
+- Check [FAQ Page](https://www.creative-tim.com/faq)
+
+#### Special thanks
+
+During the development of this dashboard, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
+
+- [MUI](https://mui.com/) - The React UI library for faster and easier web development.
+- [React Table](https://react-table.tanstack.com/) - Lightweight and extensible data tables for React.
+- [React Flatpickr](https://github.com/haoxins/react-flatpickr) - Useful library used to select date.
+- [React Select](https://react-select.com/) - A flexible and beautiful Select Input control for ReactJS with multiselect, autocomplete, async and creatable support.
+- [React Tag Input](https://betterstack.dev/projects/react-tag-input/) - React Tag Input is a robust, minimal and performant input field for creating multiple tags.
+- [React Countup](https://github.com/glennreyes/react-countup) - A lightweight React component that can be used to quickly create animations that display numerical data in a more interesting way.
+- [React ChartJS 2](http://reactchartjs.github.io/react-chartjs-2/#/) - Simple yet flexible React charting for designers & developers.
+- [Full Calendar](https://fullcalendar.io/) - Full-sized drag & drop event calendar.
+- [Dropzone](https://www.dropzonejs.com/) - An open source library that provides drag & drop file uploads with image previews.
+- [React Kanban](https://github.com/asseinfo/react-kanban) - Kanban/Trello board lib for React.
+- [React Images Viewer](https://guonanci.github.io/react-images-viewer/) - A simple, responsive images viewer component for ReactJS.
+- [React Quill](https://github.com/zenoamaro/react-quill) - A free, open source WYSIWYG editor built for the modern web.
+- [Sweet Alert 2](https://sweetalert2.github.io/) - A beautiful, responsive, customisable, accessible replacement for Javascript’s popup boxes.
+- [ThreeJS](https://threejs.org/) - JavaScript 3D library
+- [Formik](https://formik.org/) - Formik is the world's most popular open source form library for React and React Native.
+- [Vanilla Tilt](https://www.npmjs.com/package/vanilla-tilt) - A lightweight parallax hover tilt effect for JavaScript.
+- [React Leaflet](https://react-leaflet.js.org/) - React components for Leaflet maps.
+- [React Circular Slider](https://marc.khouri.ca/react-circular-slider/) - A full-featured circular slider React component, with full TypeScript definitions.
+- [ChromaJS](https://gka.github.io/chroma.js/) - A small-ish zero-dependency JavaScript library for all kinds of color conversions and color scales.
+- [UUID](https://github.com/uuidjs/uuid) - JavaScript library for generating random id numbers.
+- [HTML React Parser](https://github.com/remarkablemark/html-react-parser) - A utility for converting HTML strings into React components.
+- [Nepcha Analytics](https://nepcha.com?ref=readme) for the analytics tool. Nepcha is already integrated with BalAsha - Nurture. You can use it to gain insights into your sources of traffic.
+
+Let us know your thoughts below. And good luck with development!
 
 ## Table of Contents
 
@@ -75,105 +112,147 @@ background image.
 
 ## Versions
 
-[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/html-logo.jpg" width="60" height="60" />](https://www.creative-tim.com/product/light-bootstrap-dashboard?ref=lbdr-readme)[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react-logo.jpg" width="60" height="60" />](https://www.creative-tim.com/product/light-bootstrap-dashboard-react?ref=lbdr-readme)[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/vue-logo.jpg" width="60" height="60" />](https://www.creative-tim.com/product/vue-light-bootstrap-dashboard?ref=lbdr-readme)[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/angular-logo.jpg" width="60" height="60" />](https://www.creative-tim.com/product/light-bootstrap-dashboard-angular2?ref=lbdr-readme)
+[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/soft-ui-dashboard-pro-react?ref=readme-sudpr)
 
-| HTML                                                                                                                                                                                                                                                   | React                                                                                                                                                                                                                                                                     | Vue                                                                                                                                                                                                                                                               | Angular                                                                                                                                                                                                                                                                            |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [![Light Bootstrap Dashboard HTML](https://github.com/creativetimofficial/public-assets/blob/master/light-bootstrap-dashboard/light-bootstrap-dashboard.jpg?raw=true)](https://www.creative-tim.com/product/light-bootstrap-dashboard?ref=lbdr-readme) | [![Light Bootstrap Dashboard React](https://github.com/creativetimofficial/public-assets/blob/master/light-bootstrap-dashboard-react/light-bootstrap-dashboard-react.jpg?raw=true)](https://www.creative-tim.com/product/light-bootstrap-dashboard-react?ref=lbdr-readme) | [![Vue Light Bootstrap Dashboard](https://github.com/creativetimofficial/public-assets/blob/master/vue-light-bootstrap-dashboard/vue-light-bootstrap-dashboard.jpg?raw=true)](https://www.creative-tim.com/product/vue-light-bootstrap-dashboard?ref=lbdr-readme) | [![Light Bootstrap Dashboard Angular](https://github.com/creativetimofficial/public-assets/blob/master/light-bootstrap-dashboard-angular/light-bootstrap-dashboard-angular.jpg?raw=true)](https://www.creative-tim.com/product/light-bootstrap-dashboard-angular2?ref=lbdr-readme) |
+| React |
+| ----- |
+
+| [![BalAsha - Nurture](https://s3.amazonaws.com/creativetim_bucket/products/499/thumb/soft-ui-dashboard-pro-material-ui.jpg)](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr)
 
 ## Demo
 
-| Dashboard                                                                                                                                                                                                                                        | User Profile                                                                                                                                                                                                                                       | Tables                                                                                                                                                                                                                                           | Maps                                                                                                                                                                                                                                                             |
-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [![Start page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/light-bootstrap-dashboard-react/dashboard-page.png)](https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/admin/dashboard?ref=lbdr-readme) | [![User profile page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/light-bootstrap-dashboard-react/user-page.png)](https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/admin/user-page?ref=lbdr-readme) | [![Tables page ](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/light-bootstrap-dashboard-react/tables-page.png)](https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/admin/table-list?ref=lbdr-readme) | [![Notifications Page](https://raw.githubusercontent.com/creativetimofficial/public-assets/master/light-bootstrap-dashboard-react/notifications-page.png)](https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/admin/notifications?ref=lbdr-readme) |
+- [Dashboard](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr)
+- [Automotive](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/automotive?ref=readme-sudpr)
+- [Virtual Reality](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/virtual-reality/default?ref=readme-sudpr)
+- [Profile](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/pages/profile/profile-overview?ref=readme-sudpr)
+- [Account](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/pages/account/settings?ref=readme-sudpr)
+- [RTL](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/pages/rtl?ref=readme-sudpr)
+- [Applications](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/applications/kanban?ref=readme-sudpr)
+- [Ecommerce](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/ecommerce/overview?ref=readme-sudpr)
+- [Sign In](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/authentication/sign-in/basic?ref=readme-sudpr)
+- [Sign Up](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/authentication/sign-up/basic?ref=readme-sudpr)
 
-[View More](https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/admin/dashboard?ref=lbdr-readme).
+[View More](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr).
 
 ## Quick start
 
 Quick start options:
 
-- Clone the repo: `git clone https://github.com/creativetimofficial/light-bootstrap-dashboard-react.git`.
-- [Download from Github](https://github.com/creativetimofficial/light-bootstrap-dashboard-react/archive/master.zip).
-- [Download from Bal-Asha](https://www.creative-tim.com/product/light-bootstrap-dashboard-react?ref=lbdr-readme).
+- Buy from [BalAsha - Nurture](https://www.creative-tim.com/product/soft-ui-dashboard-pro-react?ref=readme-sudpr).
+
+## Terminal Commands
+
+1. Download and Install NodeJs LTS version from [NodeJs Official Page](https://nodejs.org/en/download/).
+2. Navigate to the root ./ directory of the product and run `yarn install` or `npm install` to install our local dependencies.
 
 ## Documentation
 
-The documentation for the Light Bootstrap Dashboard React is hosted at
-our [website](https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/documentation/?ref=lbdr-readme).
+The documentation for the BalAsha - Nurture is hosted at our [website](https://www.creative-tim.com/learning-lab/react/overview/soft-ui-dashboard/?ref=readme-sudpr).
 
-## File Structure
+### What's included
 
 Within the download you'll find the following directories and files:
 
 ```
-light-bootstrap-dashboard-react
-.
-├── CHANGELOG.md
-├── ISSUE_TEMPLATE.md
-├── LICENSE.md
-├── README.md
-├── gulpfile.js
-├── jsconfig.json
-├── package.json
-├── Documentation
-│   ├── css
-│   │   ├── demo.css
-│   │   ├── documentation.css
-│   │   └── light-bootstrap-dashboard.css
-│   ├── img
-│   └── tutorial-components.html
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   └── manifest.json
-└── src
-    ├── index.js
-    ├── logo.svg
-    ├── routes.js
-    ├── assets
-    │   ├── css
-    │   │   ├── animate.min.css
-    │   │   ├── demo.css
-    │   │   ├── light-bootstrap-dashboard-react.css
-    │   │   ├── light-bootstrap-dashboard-react.css.map
-    │   │   └── light-bootstrap-dashboard-react.min.css
-    │   ├── fonts
-    │   │   ├── nucleo-icons.eot
-    │   │   ├── nucleo-icons.svg
-    │   │   ├── nucleo-icons.ttf
-    │   │   ├── nucleo-icons.woff
-    │   │   └── nucleo-icons.woff2
-    │   ├── img
-    │   │   └── faces
-    │   └── scss
-    │       ├── lbd
-    │       │   ├── mixins
-    │       │   └── plugins
-    │       ├── lbdr
-    │       │   ├── plugins
-    │       │   └── react-differences.scss
-    │       └── light-bootstrap-dashboard-react.scss
-    ├── layouts
-    │   └── Admin.js
-    ├── components
-    │   ├── FixedPlugin
-    │   │   └── FixedPlugin.js
-    │   ├── Footer
-    │   │   └── Footer.js
-    │   ├── Navbars
-    │   │   └── AdminNavbar.js
-    │   └── Sidebar
-    │       └── Sidebar.js
-    └── views
-        ├── Dashboard.js
-        ├── Icons.js
-        ├── Maps.js
-        ├── Notifications.js
-        ├── TableList.js
-        ├── Typography.js
-        ├── Upgrade.js
-        └── UserProfile.js
+soft-ui-dashboard-pro-react
+    ├── public
+    │   ├── apple-icon.png
+    │   ├── favicon.png
+    │   ├── index.html
+    │   ├── manifest.json
+    │   └── robots.txt
+    ├── src
+    │   ├── assets
+    │   │   ├── images
+    │   │   └── theme
+    │   │       ├── base
+    │   │       ├── components
+    │   │       ├── functions
+    │   │       ├── index.js
+    │   │       └── theme-rtl.js
+    │   ├── components
+    │   │   ├── SoftAlert
+    │   │   ├── SoftAvatar
+    │   │   ├── SoftBadge
+    │   │   ├── SoftBadgeDot
+    │   │   ├── SoftBox
+    │   │   ├── SoftButton
+    │   │   ├── SoftDatePicker
+    │   │   ├── SoftDropzone
+    │   │   ├── SoftEditor
+    │   │   ├── SoftInput
+    │   │   ├── SoftPagination
+    │   │   ├── SoftProgress
+    │   │   ├── SoftSelect
+    │   │   ├── SoftSnackbar
+    │   │   ├── SoftSocialButton
+    │   │   ├── SoftTagInput
+    │   │   └── SoftTypography
+    │   ├── context
+    │   ├── examples
+    │   │   ├── Breadcrumbs
+    │   │   ├── Calendar
+    │   │   ├── Cards
+    │   │   ├── Charts
+    │   │   ├── Configurator
+    │   │   ├── Footer
+    │   │   ├── Globe
+    │   │   ├── Icons
+    │   │   ├── Items
+    │   │   ├── LayoutContainers
+    │   │   ├── Lists
+    │   │   ├── Navbars
+    │   │   ├── Sidenav
+    │   │   ├── Tables
+    │   │   └── Timeline
+    │   ├── layouts
+    │   │   ├── applications
+    │   │   │    ├── analytics
+    │   │   │    ├── calendar
+    │   │   │    ├── data-tables
+    │   │   │    ├── kanban
+    │   │   │    └── wizard
+    │   │   ├── authentication
+    │   │   │    ├── 2-step-verification
+    │   │   │    ├── components
+    │   │   │    ├── error
+    │   │   │    ├── lock
+    │   │   │    ├── reset-password
+    │   │   │    ├── sign-in
+    │   │   │    └── sign-up
+    │   │   ├── dashboards
+    │   │   │    ├── automotive
+    │   │   │    ├── crm
+    │   │   │    ├── default
+    │   │   │    ├── smart-home
+    │   │   │    └── virtual-reality
+    │   │   ├── ecommerce
+    │   │   │    ├── orders
+    │   │   │    ├── overview
+    │   │   │    ├── products
+    │   │   │    └── referral
+    │   │   └── pages
+    │   │        ├── account
+    │   │        ├── charts
+    │   │        ├── notifications
+    │   │        ├── pricing-page
+    │   │        ├── profile
+    │   │        ├── projects
+    │   │        ├── rtl
+    │   │        ├── sweet-alerts
+    │   │        ├── users
+    │   │        └── widgets
+    │   ├── App.js
+    │   ├── index.js
+    │   ├── page.routes.js
+    │   └── routes.js
+    ├── .eslintrc.json
+    ├── .prettierrc.json
+    ├── CHANGELOG.md
+    ├── ISSUE_TEMPLATE.md
+    ├── jsconfig.json
+    ├── package.json
+    └── README.md
 ```
 
 ## Browser Support
@@ -184,44 +263,42 @@ At present, we officially aim to support the last two versions of the following 
 
 ## Resources
 
-- Demo: https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/admin/dashboard?ref=lbdr-readme
-- Download Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react?ref=lbdr-readme
-- Documentation: https://demos.creative-tim.com/light-bootstrap-dashboard-react/#/documentation/tutorial?ref=lbdr-readme
-- License Agreement: https://www.creative-tim.com/license?ref=lbdr-readme
-- Support: https://www.creative-tim.com/contact-us?ref=lbdr-readme
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/light-bootstrap-dashboard-react/issues)
+- [Live Preview](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr)
+- [Buy Page](https://www.creative-tim.com/product/soft-ui-dashboard-pro-react?ref=readme-sudpr)
+- Documentation is [here](https://www.creative-tim.com/learning-lab/react/overview/soft-ui-dashboard/?ref=readme-sudpr)
+- [License Agreement](https://www.creative-tim.com/license?ref=readme-sudpr)
+- [Support](https://www.creative-tim.com/contact-us?ref=readme-sudpr)
+- Issues: [Github Issues Page](https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/issues)
+- [Nepcha Analytics](https://nepcha.com?ref=readme) - Analytics tool for your website
 
 ## Reporting Issues
 
-We use GitHub Issues as the official bug tracker for the Light Bootstrap Dashboard React. Here are some advices for our
-users that want to report an issue:
+We use GitHub Issues as the official bug tracker for the BalAsha - Nurture. Here are some advices for our users that want to report an issue:
 
-1. Make sure that you are using the latest version of the Light Bootstrap Dashboard React. Check the CHANGELOG from your
-   dashboard on our [website](https://www.creative-tim.com/?ref=lbdr-readme).
+1. Make sure that you are using the latest version of the BalAsha - Nurture. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/soft-ui-dashboard-pro-react?ref=readme-sudpr).
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 
 ## Technical Support or Questions
 
-If you have questions or need help integrating the product
-please [contact us](https://www.creative-tim.com/contact-us?ref=lbdr-readme) instead of opening an issue.
+If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us?ref=readme-sudpr) instead of opening an issue.
 
 ## Licensing
 
-- Copyright 2022 Bal-Asha (https://www.creative-tim.com?ref=lbdr-readme)
-- Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard-react/blob/master/LICENSE.md)
+- Copyright 2023 [BalAsha - Nurture](https://www.creative-tim.com?ref=readme-sudpr)
+- BalAsha - Nurture [license](https://www.creative-tim.com/license?ref=readme-sudpr)
 
 ## Useful Links
 
-More products from Bal-Asha: <https://www.creative-tim.com/products?ref=lbdr-readme>
+- [More products](https://www.creative-tim.com/templates?ref=readme-sudpr) from BalAsha - Nurture
 
-Tutorials: <https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w>
+- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
 
-Freebies: <https://www.creative-tim.com/products?ref=lbdr-readme>
+- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-sudpr) from BalAsha - Nurture
 
-Affiliate Program (earn money): <https://www.creative-tim.com/affiliates/new?ref=lbdr-readme>
+- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-sudpr) (earn money)
 
-Social Media:
+##### Social Media
 
 Twitter: <https://twitter.com/CreativeTim>
 
@@ -232,3 +309,4 @@ Dribbble: <https://dribbble.com/creativetim>
 Google+: <https://plus.google.com/+CreativetimPage>
 
 Instagram: <https://instagram.com/creativetimofficial>
+
