@@ -4,10 +4,10 @@
 * BalAsha - Nurture - v4.0.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 BalAsha - Nurture (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
+* Copyright 2023 BalAsha - Nurture (https://balasha-nurture.web.app)
 
-Coded by www.creative-tim.com
+Coded by www.bal-asha.com
 
  =========================================================
 
@@ -122,7 +122,7 @@ function Globe({ canvasStyle, ...rest }) {
         if (hasWebGL()) {
           window
             .fetch(
-              "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-dashboard-pro/assets/js/points.json"
+              "https://raw.githubusercontent.com/balashaofficial/public-assets/master/soft-ui-dashboard-pro/assets/js/points.json"
             )
             .then((response) => response.json())
             .then((data) => makeMagic(data.points));

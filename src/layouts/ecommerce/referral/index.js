@@ -3,10 +3,10 @@
 * BalAsha - Nurture - v4.0.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 BalAsha - Nurture (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
+* Copyright 2023 BalAsha - Nurture (https://balasha-nurture.web.app)
 
-Coded by www.creative-tim.com
+Coded by www.bal-asha.com
 
  =========================================================
 
@@ -42,7 +42,7 @@ import dataTableData from "layouts/ecommerce/referral/data/dataTableData";
 import officeDark from "assets/images/office-dark.jpg";
 
 const image1 =
-  "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/soft-ui-design-system/assets/img/window-desk.jpg";
+  "https://raw.githubusercontent.com/balashaofficial/public-assets/master/soft-ui-design-system/assets/img/window-desk.jpg";
 
 function Referral() {
   return (

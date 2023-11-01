@@ -12,8 +12,8 @@ gulp.task("licenses", async function () {
 * Light Bootstrap Dashboard React - v2.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2020 Bal-Asha (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/light-bootstrap-dashboard-react
+* Copyright 2020 Bal-Asha (https://balasha-nurture.web.app)
 
 * Coded by Bal-Asha
 
@@ -35,8 +35,8 @@ gulp.task("licenses", async function () {
 * Light Bootstrap Dashboard React - v2.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2020 Bal-Asha (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/light-bootstrap-dashboard-react
+* Copyright 2020 Bal-Asha (https://balasha-nurture.web.app)
 
 * Coded by Bal-Asha
 
@@ -58,8 +58,8 @@ gulp.task("licenses", async function () {
 * Light Bootstrap Dashboard React - v2.0.1
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-react
-* Copyright 2020 Bal-Asha (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/light-bootstrap-dashboard-react
+* Copyright 2020 Bal-Asha (https://balasha-nurture.web.app)
 
 * Coded by Bal-Asha
 

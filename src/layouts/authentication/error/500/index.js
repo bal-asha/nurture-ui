@@ -3,10 +3,10 @@
 * BalAsha - Nurture - v4.0.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 BalAsha - Nurture (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
+* Copyright 2023 BalAsha - Nurture (https://balasha-nurture.web.app)
 
-Coded by www.creative-tim.com
+Coded by www.bal-asha.com
 
  =========================================================
 
@@ -50,7 +50,7 @@ function Error500() {
         transparent
         action={{
           type: "external",
-          route: "https://creative-tim.com/product/soft-ui-dashboard-pro-react",
+          route: "https://bal-asha.com/product/soft-ui-dashboard-react",
           label: "buy now",
           color: "dark",
         }}

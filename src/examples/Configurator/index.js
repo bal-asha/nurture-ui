@@ -3,10 +3,10 @@
 * BalAsha - Nurture - v4.0.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 BalAsha - Nurture (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
+* Copyright 2023 BalAsha - Nurture (https://balasha-nurture.web.app)
 
-Coded by www.creative-tim.com
+Coded by www.bal-asha.com
 
  =========================================================
 
@@ -216,7 +216,7 @@ function Configurator() {
           <SoftBox mb={2}>
             <SoftButton
               component={Link}
-              href="https://www.creative-tim.com/product/soft-ui-dashboard-pro-react"
+              href="https://balasha-nurture.web.app/product/soft-ui-dashboard-react"
               target="_blank"
               rel="noreferrer"
               color="info"
@@ -229,7 +229,7 @@ function Configurator() {
           <SoftBox mb={2}>
             <SoftButton
               component={Link}
-              href="https://www.creative-tim.com/product/soft-ui-dashboard-react"
+              href="https://balasha-nurture.web.app/product/soft-ui-dashboard-react"
               target="_blank"
               rel="noreferrer"
               color="dark"
@@ -241,7 +241,7 @@ function Configurator() {
           </SoftBox>
           <SoftButton
             component={Link}
-            href="https://www.creative-tim.com/learning-lab/react/quick-start/soft-ui-dashboard/"
+            href="https://balasha-nurture.web.app/learning-lab/react/quick-start/soft-ui-dashboard/"
             target="_blank"
             rel="noreferrer"
             color="dark"
@@ -254,11 +254,11 @@ function Configurator() {
         <SoftBox display="flex" justifyContent="center">
           <a
             className="github-button"
-            href="https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react"
+            href="https://github.com/bal-asha/nurture-ui"
             data-icon="octicon-star"
             data-size="large"
             data-show-count="true"
-            aria-label="Star creativetimofficial/ct-soft-ui-dashboard-pro-react on GitHub"
+            aria-label="Star balashaofficial/ct-soft-ui-dashboard-react on GitHub"
           >
             Star
           </a>
@@ -272,7 +272,7 @@ function Configurator() {
             <SoftBox mr={1.5}>
               <SoftButton
                 component={Link}
-                href="//twitter.com/intent/tweet?text=Check%20Soft%20UI%20Dashboard%20PRO%20React%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23react%20%mui&url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard-pro-react"
+                href="//twitter.com/intent/tweet?text=Check%20Soft%20UI%20Dashboard%20PRO%20React%20made%20by%20%40BalAsha%20%23webdesign%20%23dashboard%20%23react%20%mui&url=https%3A%2F%2Fwww.bal-asha.com%2Fproduct%2Fsoft-ui-dashboard-react"
                 target="_blank"
                 rel="noreferrer"
                 color="dark"
@@ -283,7 +283,7 @@ function Configurator() {
             </SoftBox>
             <SoftButton
               component={Link}
-              href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/soft-ui-dashboard-pro-react"
+              href="https://www.facebook.com/sharer/sharer.php?u=https://balasha-nurture.web.app/product/soft-ui-dashboard-react"
               target="_blank"
               rel="noreferrer"
               color="dark"

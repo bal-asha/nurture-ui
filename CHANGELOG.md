@@ -194,7 +194,7 @@ react-quill                        2.0.0-beta.2     →     1.3.5
 
 ### Warning
 
-The soft-ui-dashboard-pro-react/pages/rtl is chaning the route slowly in development mode its a problem with @emotion/cache `prepend` and we will fix it on our future updates.
+The soft-ui-dashboard-react/pages/rtl is chaning the route slowly in development mode its a problem with @emotion/cache `prepend` and we will fix it on our future updates.
 
 ## [1.0.0] 2021-09-02
 

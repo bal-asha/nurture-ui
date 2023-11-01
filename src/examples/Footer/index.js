@@ -3,10 +3,10 @@
 * BalAsha - Nurture - v4.0.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 BalAsha - Nurture (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
+* Copyright 2023 BalAsha - Nurture (https://balasha-nurture.web.app)
 
-Coded by www.creative-tim.com
+Coded by www.bal-asha.com
 
  =========================================================
 
@@ -99,12 +99,12 @@ function Footer({ company, links }) {
 
 // Setting default values for the props of Footer
 Footer.defaultProps = {
-  company: { href: "https://www.creative-tim.com/", name: "BalAsha - Nurture" },
+  company: { href: "https://balasha-nurture.web.app/", name: "BalAsha - Nurture" },
   links: [
-    { href: "https://www.creative-tim.com/", name: "BalAsha - Nurture" },
-    { href: "https://www.creative-tim.com/presentation", name: "About Us" },
-    { href: "https://www.creative-tim.com/blog", name: "Blog" },
-    { href: "https://www.creative-tim.com/license", name: "License" },
+    { href: "https://balasha-nurture.web.app/", name: "BalAsha - Nurture" },
+    { href: "https://balasha-nurture.web.app/presentation", name: "About Us" },
+    { href: "https://balasha-nurture.web.app/blog", name: "Blog" },
+    { href: "https://balasha-nurture.web.app/license", name: "License" },
   ],
 };
 

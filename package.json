@@ -1,15 +1,15 @@
 {
-  "name": "soft-ui-dashboard-pro-react",
+  "name": "soft-ui-dashboard-react",
   "version": "4.0.2",
   "author": "BalAsha - Nurture",
-  "license": "SEE LICENSE IN <https://www.creative-tim.com/license>",
+  "license": "SEE LICENSE IN <https://balasha-nurture.web.app/license>",
   "description": "React version of BalAsha - Nurture by BalAsha - Nurture",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/issues"
+    "url": "https://github.com/bal-asha/nurture-ui/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react.git"
+    "url": "git+https://github.com/bal-asha/nurture-ui.git"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -43,6 +43,7 @@
     "draft-convert": "^2.1.13",
     "draft-js": "^0.11.7",
     "dropzone": "5.9.3",
+    "firebase": "^10.5.2",
     "flatpickr": "4.6.13",
     "formik": "2.2.9",
     "html-react-parser": "3.0.16",

@@ -3,10 +3,10 @@
 * BalAsha - Nurture - v4.0.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 BalAsha - Nurture (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
+* Copyright 2023 BalAsha - Nurture (https://balasha-nurture.web.app)
 
-Coded by www.creative-tim.com
+Coded by www.bal-asha.com
 
  =========================================================
 
@@ -540,22 +540,22 @@ const routes = [
           {
             name: "Overview",
             key: "overview",
-            href: "https://www.creative-tim.com/learning-lab/react/overview/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/overview/soft-ui-dashboard/",
           },
           {
             name: "License",
             key: "license",
-            href: "https://www.creative-tim.com/learning-lab/react/license/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/license/soft-ui-dashboard/",
           },
           {
             name: "Quick Start",
             key: "quick-start",
-            href: "https://www.creative-tim.com/learning-lab/react/quick-start/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/quick-start/soft-ui-dashboard/",
           },
           {
             name: "Build Tools",
             key: "build-tools",
-            href: "https://www.creative-tim.com/learning-lab/react/build-tools/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/build-tools/soft-ui-dashboard/",
           },
         ],
       },
@@ -566,37 +566,37 @@ const routes = [
           {
             name: "Colors",
             key: "colors",
-            href: "https://www.creative-tim.com/learning-lab/react/colors/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/colors/soft-ui-dashboard/",
           },
           {
             name: "Grid",
             key: "grid",
-            href: "https://www.creative-tim.com/learning-lab/react/grid/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/grid/soft-ui-dashboard/",
           },
           {
             name: "Typography",
             key: "base-typography",
-            href: "https://www.creative-tim.com/learning-lab/react/base-typography/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/base-typography/soft-ui-dashboard/",
           },
           {
             name: "Borders",
             key: "borders",
-            href: "https://www.creative-tim.com/learning-lab/react/borders/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/borders/soft-ui-dashboard/",
           },
           {
             name: "Box Shadows",
             key: "box-shadows",
-            href: "https://www.creative-tim.com/learning-lab/react/box-shadows/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/box-shadows/soft-ui-dashboard/",
           },
           {
             name: "Functions",
             key: "functions",
-            href: "https://www.creative-tim.com/learning-lab/react/functions/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/functions/soft-ui-dashboard/",
           },
           {
             name: "Routing System",
             key: "routing-system",
-            href: "https://www.creative-tim.com/learning-lab/react/routing-system/soft-ui-dashboard/",
+            href: "https://balasha-nurture.web.app/learning-lab/react/routing-system/soft-ui-dashboard/",
           },
         ],
       },
@@ -611,87 +611,87 @@ const routes = [
       {
         name: "Alerts",
         key: "alerts",
-        href: "https://www.creative-tim.com/learning-lab/react/alerts/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/alerts/soft-ui-dashboard/",
       },
       {
         name: "Avatar",
         key: "avatar",
-        href: "https://www.creative-tim.com/learning-lab/react/avatar/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/avatar/soft-ui-dashboard/",
       },
       {
         name: "Badge",
         key: "badge",
-        href: "https://www.creative-tim.com/learning-lab/react/badge/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/badge/soft-ui-dashboard/",
       },
       {
         name: "Badge Dot",
         key: "badge-dot",
-        href: "https://www.creative-tim.com/learning-lab/react/badge-dot/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/badge-dot/soft-ui-dashboard/",
       },
       {
         name: "Box",
         key: "box",
-        href: "https://www.creative-tim.com/learning-lab/react/box/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/box/soft-ui-dashboard/",
       },
       {
         name: "Buttons",
         key: "buttons",
-        href: "https://www.creative-tim.com/learning-lab/react/buttons/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/buttons/soft-ui-dashboard/",
       },
       {
         name: "Date Picker",
         key: "date-picker",
-        href: "https://www.creative-tim.com/learning-lab/react/datepicker/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/datepicker/soft-ui-dashboard/",
       },
       {
         name: "Dropzone",
         key: "dropzone",
-        href: "https://www.creative-tim.com/learning-lab/react/dropzone/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/dropzone/soft-ui-dashboard/",
       },
       {
         name: "Editor",
         key: "editor",
-        href: "https://www.creative-tim.com/learning-lab/react/quill/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/quill/soft-ui-dashboard/",
       },
       {
         name: "Input",
         key: "input",
-        href: "https://www.creative-tim.com/learning-lab/react/input/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/input/soft-ui-dashboard/",
       },
       {
         name: "Pagination",
         key: "pagination",
-        href: "https://www.creative-tim.com/learning-lab/react/pagination/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/pagination/soft-ui-dashboard/",
       },
       {
         name: "Progress",
         key: "progress",
-        href: "https://www.creative-tim.com/learning-lab/react/progress/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/progress/soft-ui-dashboard/",
       },
       {
         name: "Select",
         key: "select",
-        href: "https://www.creative-tim.com/learning-lab/react/select/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/select/soft-ui-dashboard/",
       },
       {
         name: "Snackbar",
         key: "snackbar",
-        href: "https://www.creative-tim.com/learning-lab/react/snackbar/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/snackbar/soft-ui-dashboard/",
       },
       {
         name: "Social Button",
         key: "social-button",
-        href: "https://www.creative-tim.com/learning-lab/react/social-buttons/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/social-buttons/soft-ui-dashboard/",
       },
       {
         name: "Tag Input",
         key: "tag-input",
-        href: "https://www.creative-tim.com/learning-lab/react/tag-input/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/tag-input/soft-ui-dashboard/",
       },
       {
         name: "Typography",
         key: "typography",
-        href: "https://www.creative-tim.com/learning-lab/react/typography/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/typography/soft-ui-dashboard/",
       },
     ],
   },
@@ -699,7 +699,7 @@ const routes = [
     type: "collapse",
     name: "Change Log",
     key: "changelog",
-    href: "https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/blob/main/CHANGELOG.md",
+    href: "https://github.com/bal-asha/nurture-ui/blob/main/CHANGELOG.md",
     icon: <CreditCard size="12px" />,
     noCollapse: true,
   },

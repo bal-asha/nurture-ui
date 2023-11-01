@@ -3,10 +3,10 @@
 * BalAsha - Nurture - v4.0.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 BalAsha - Nurture (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
+* Copyright 2023 BalAsha - Nurture (https://balasha-nurture.web.app)
 
-Coded by www.creative-tim.com
+Coded by www.bal-asha.com
 
  =========================================================
 
@@ -410,28 +410,28 @@ const pageRoutes = [
       {
         name: "Getting Started",
         key: "getting-started",
-        href: "https://www.creative-tim.com/learning-lab/react/quick-start/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/quick-start/soft-ui-dashboard/",
         description: "All about overview, quick start, license and contents",
         icon: <SpaceShip size="15px" color="secondary" />,
       },
       {
         name: "Foundation",
         key: "foundation",
-        href: "https://www.creative-tim.com/learning-lab/react/colors/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/colors/soft-ui-dashboard/",
         description: "See our colors, icons and typography",
         icon: <Document size="15px" color="secondary" />,
       },
       {
         name: "Components",
         key: "components",
-        href: "https://www.creative-tim.com/learning-lab/react/alerts/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/alerts/soft-ui-dashboard/",
         description: "Explore our collection of fully designed components",
         icon: <Cube size="15px" color="secondary" />,
       },
       {
         name: "Plugins",
         key: "plugins",
-        href: "https://www.creative-tim.com/learning-lab/react/datepicker/soft-ui-dashboard/",
+        href: "https://balasha-nurture.web.app/learning-lab/react/datepicker/soft-ui-dashboard/",
         description: "Check how you can integrate our plugins",
         icon: <Shop size="15px" color="secondary" />,
       },

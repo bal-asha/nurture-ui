@@ -1,8 +1,8 @@
-# [BalAsha - Nurture](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://www.creative-tim.com/product/soft-ui-dashboard-pro-react&text=Check%20Soft%20UI%20Dashboard%20Pro%React%20made%20by%20@CreativeTim%20#webdesign%20#dashboard%20#softdesign%20#react%20https://www.creative-tim.com/product/soft-ui-dashboard-pro-react)
+# [BalAsha - Nurture](http://demos.bal-asha.com/soft-ui-dashboard-react/#/dashboards/default?ref=readme-sudpr) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/intent/tweet?url=https://balasha-nurture.web.app/product/soft-ui-dashboard-react&text=Check%20Soft%20UI%20Dashboard%20Pro%React%20made%20by%20@BalAsha%20#webdesign%20#dashboard%20#softdesign%20#react%20https://balasha-nurture.web.app/product/soft-ui-dashboard-react)
 
-![version](https://img.shields.io/badge/version-4.0.2-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/ct-soft-ui-dashboard-pro-react.svg)](https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/ct-soft-ui-dashboard-pro-react.svg)](https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/issues?q=is%3Aissue+is%3Aclosed)
+![version](https://img.shields.io/badge/version-4.0.2-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/balashaofficial/ct-soft-ui-dashboard-react.svg)](https://github.com/bal-asha/nurture-ui/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/balashaofficial/ct-soft-ui-dashboard-react.svg)](https://github.com/bal-asha/nurture-ui/issues?q=is%3Aissue+is%3Aclosed)
 
-![Image](https://s3.amazonaws.com/creativetim_bucket/products/499/original/soft-ui-dashboard-pro-material-ui.jpg)
+![Image](https://s3.amazonaws.com/balasha_bucket/products/499/original/soft-ui-dashboard-pro-material-ui.jpg)
 
 UI for Bala Asha App
 
@@ -48,24 +48,24 @@ Start your Development with an Innovative Admin Template for MUI and React. If y
 **Fully Coded Elements**
 BalAsha - Nurture is built with over 300 frontend individual elements, like buttons, inputs, navbars, nav tabs, cards, or alerts, giving you the freedom of choosing and combining. All components can take variations in color, which you can easily modify using MUI styled api and sx prop. You will save a lot of time going from prototyping to full-functional code because all elements are implemented. This Premium MUI Dashboard is coming with prebuilt design blocks, so the development process is seamless, switching from our pages to the real website is very easy to be done.
 
-View [all components here](https://www.creative-tim.com/learning-lab/react/alerts/soft-ui-dashboard/).
+View [all components here](https://balasha-nurture.web.app/learning-lab/react/alerts/soft-ui-dashboard/).
 
 **Documentation built by Developers**
 
 Each element is well presented in very complex documentation.
 
-You can read more about the [documentation here](https://www.creative-tim.com/learning-lab/react/overview/soft-ui-dashboard/).
+You can read more about the [documentation here](https://balasha-nurture.web.app/learning-lab/react/overview/soft-ui-dashboard/).
 
 **Example Pages**
 
 If you want to get inspiration or just show something directly to your clients, you can jump-start your development with our pre-built example pages. Every page is spaced well, with attractive layouts and pleasing shapes. From specially designed dashboards for smart homes, virtual reality, and automotives to CRM admins, BalAsha - Nurture has everything you need to quickly set up an amazing project.
 
-View [example pages here](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default).
+View [example pages here](https://demos.bal-asha.com/soft-ui-dashboard-react/#/dashboards/default).
 
 **HELPFUL LINKS**
 
-- View [Github Repository](https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react)
-- Check [FAQ Page](https://www.creative-tim.com/faq)
+- View [Github Repository](https://github.com/bal-asha/nurture-ui)
+- Check [FAQ Page](https://balasha-nurture.web.app/faq)
 
 #### Special thanks
 
@@ -112,33 +112,33 @@ Let us know your thoughts below. And good luck with development!
 
 ## Versions
 
-[<img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/soft-ui-dashboard-pro-react?ref=readme-sudpr)
+[<img src="https://raw.githubusercontent.com/balashaofficial/public-assets/master/logos/react-logo.jpg?raw=true" width="60" height="60" />](https://balasha-nurture.web.app/product/soft-ui-dashboard-react?ref=readme-sudpr)
 
 | React |
 | ----- |
 
-| [![BalAsha - Nurture](https://s3.amazonaws.com/creativetim_bucket/products/499/thumb/soft-ui-dashboard-pro-material-ui.jpg)](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr)
+| [![BalAsha - Nurture](https://s3.amazonaws.com/balasha_bucket/products/499/thumb/soft-ui-dashboard-pro-material-ui.jpg)](http://demos.bal-asha.com/soft-ui-dashboard-react/#/dashboards/default?ref=readme-sudpr)
 
 ## Demo
 
-- [Dashboard](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr)
-- [Automotive](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/automotive?ref=readme-sudpr)
-- [Virtual Reality](http://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/virtual-reality/default?ref=readme-sudpr)
-- [Profile](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/pages/profile/profile-overview?ref=readme-sudpr)
-- [Account](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/pages/account/settings?ref=readme-sudpr)
-- [RTL](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/pages/rtl?ref=readme-sudpr)
-- [Applications](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/applications/kanban?ref=readme-sudpr)
-- [Ecommerce](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/ecommerce/overview?ref=readme-sudpr)
-- [Sign In](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/authentication/sign-in/basic?ref=readme-sudpr)
-- [Sign Up](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/authentication/sign-up/basic?ref=readme-sudpr)
+- [Dashboard](http://demos.bal-asha.com/soft-ui-dashboard-react/#/dashboards/default?ref=readme-sudpr)
+- [Automotive](http://demos.bal-asha.com/soft-ui-dashboard-react/#/dashboards/automotive?ref=readme-sudpr)
+- [Virtual Reality](http://demos.bal-asha.com/soft-ui-dashboard-react/#/dashboards/virtual-reality/default?ref=readme-sudpr)
+- [Profile](https://demos.bal-asha.com/soft-ui-dashboard-react/#/pages/profile/profile-overview?ref=readme-sudpr)
+- [Account](https://demos.bal-asha.com/soft-ui-dashboard-react/#/pages/account/settings?ref=readme-sudpr)
+- [RTL](https://demos.bal-asha.com/soft-ui-dashboard-react/#/pages/rtl?ref=readme-sudpr)
+- [Applications](https://demos.bal-asha.com/soft-ui-dashboard-react/#/applications/kanban?ref=readme-sudpr)
+- [Ecommerce](https://demos.bal-asha.com/soft-ui-dashboard-react/#/ecommerce/overview?ref=readme-sudpr)
+- [Sign In](https://demos.bal-asha.com/soft-ui-dashboard-react/#/authentication/sign-in/basic?ref=readme-sudpr)
+- [Sign Up](https://demos.bal-asha.com/soft-ui-dashboard-react/#/authentication/sign-up/basic?ref=readme-sudpr)
 
-[View More](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr).
+[View More](https://demos.bal-asha.com/soft-ui-dashboard-react/#/dashboards/default?ref=readme-sudpr).
 
 ## Quick start
 
 Quick start options:
 
-- Buy from [BalAsha - Nurture](https://www.creative-tim.com/product/soft-ui-dashboard-pro-react?ref=readme-sudpr).
+- Buy from [BalAsha - Nurture](https://balasha-nurture.web.app/product/soft-ui-dashboard-react?ref=readme-sudpr).
 
 ## Terminal Commands
 
@@ -147,14 +147,14 @@ Quick start options:
 
 ## Documentation
 
-The documentation for the BalAsha - Nurture is hosted at our [website](https://www.creative-tim.com/learning-lab/react/overview/soft-ui-dashboard/?ref=readme-sudpr).
+The documentation for the BalAsha - Nurture is hosted at our [website](https://balasha-nurture.web.app/learning-lab/react/overview/soft-ui-dashboard/?ref=readme-sudpr).
 
 ### What's included
 
 Within the download you'll find the following directories and files:
 
 ```
-soft-ui-dashboard-pro-react
+soft-ui-dashboard-react
     ├── public
     │   ├── apple-icon.png
     │   ├── favicon.png
@@ -259,54 +259,34 @@ soft-ui-dashboard-pro-react
 
 At present, we officially aim to support the last two versions of the following browsers:
 
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
+<img src="https://s3.amazonaws.com/balasha_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/balasha_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/balasha_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/balasha_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/balasha_bucket/github/browser/opera.png" width="64" height="64">
 
 ## Resources
 
-- [Live Preview](https://demos.creative-tim.com/soft-ui-dashboard-pro-react/#/dashboards/default?ref=readme-sudpr)
-- [Buy Page](https://www.creative-tim.com/product/soft-ui-dashboard-pro-react?ref=readme-sudpr)
-- Documentation is [here](https://www.creative-tim.com/learning-lab/react/overview/soft-ui-dashboard/?ref=readme-sudpr)
-- [License Agreement](https://www.creative-tim.com/license?ref=readme-sudpr)
-- [Support](https://www.creative-tim.com/contact-us?ref=readme-sudpr)
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/ct-soft-ui-dashboard-pro-react/issues)
+- [Live Preview](https://demos.bal-asha.com/soft-ui-dashboard-react/#/dashboards/default?ref=readme-sudpr)
+- [Buy Page](https://balasha-nurture.web.app/product/soft-ui-dashboard-react?ref=readme-sudpr)
+- Documentation is [here](https://balasha-nurture.web.app/learning-lab/react/overview/soft-ui-dashboard/?ref=readme-sudpr)
+- [License Agreement](https://balasha-nurture.web.app/license?ref=readme-sudpr)
+- [Support](https://balasha-nurture.web.app/contact-us?ref=readme-sudpr)
+- Issues: [Github Issues Page](https://github.com/bal-asha/nurture-ui/issues)
 - [Nepcha Analytics](https://nepcha.com?ref=readme) - Analytics tool for your website
 
 ## Reporting Issues
 
 We use GitHub Issues as the official bug tracker for the BalAsha - Nurture. Here are some advices for our users that want to report an issue:
 
-1. Make sure that you are using the latest version of the BalAsha - Nurture. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/soft-ui-dashboard-pro-react?ref=readme-sudpr).
+1. Make sure that you are using the latest version of the BalAsha - Nurture. Check the CHANGELOG from your dashboard on our [website](https://balasha-nurture.web.app/product/soft-ui-dashboard-react?ref=readme-sudpr).
 2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
 3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 
 ## Technical Support or Questions
 
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us?ref=readme-sudpr) instead of opening an issue.
+If you have questions or need help integrating the product please [contact us](https://balasha-nurture.web.app/contact-us?ref=readme-sudpr) instead of opening an issue.
 
 ## Licensing
 
-- Copyright 2023 [BalAsha - Nurture](https://www.creative-tim.com?ref=readme-sudpr)
-- BalAsha - Nurture [license](https://www.creative-tim.com/license?ref=readme-sudpr)
+- Copyright 2023 [BalAsha - Nurture](https://balasha-nurture.web.app?ref=readme-sudpr)
+- BalAsha - Nurture [license](https://balasha-nurture.web.app/license?ref=readme-sudpr)
 
-## Useful Links
 
-- [More products](https://www.creative-tim.com/templates?ref=readme-sudpr) from BalAsha - Nurture
-
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-sudpr) from BalAsha - Nurture
-
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-sudpr) (earn money)
-
-##### Social Media
-
-Twitter: <https://twitter.com/CreativeTim>
-
-Facebook: <https://www.facebook.com/CreativeTim>
-
-Dribbble: <https://dribbble.com/creativetim>
-
-Google+: <https://plus.google.com/+CreativetimPage>
-
-Instagram: <https://instagram.com/creativetimofficial>
 

@@ -3,10 +3,10 @@
 * BalAsha - Nurture - v4.0.2
 =========================================================
 
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-pro-react
-* Copyright 2023 BalAsha - Nurture (https://www.creative-tim.com)
+* Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
+* Copyright 2023 BalAsha - Nurture (https://balasha-nurture.web.app)
 
-Coded by www.creative-tim.com
+Coded by www.bal-asha.com
 
  =========================================================
 
@@ -145,7 +145,7 @@ function Accounts() {
             >
               <SoftBox mr={2} mb={{ xs: 1, sm: 0 }} lineHeight={0}>
                 <SoftTypography variant="button" fontWeight="medium">
-                  hello@creative-tim.com
+                  hello@bal-asha.com
                 </SoftTypography>
               </SoftBox>
               <SoftButton variant="gradient" color="error" size="small">
