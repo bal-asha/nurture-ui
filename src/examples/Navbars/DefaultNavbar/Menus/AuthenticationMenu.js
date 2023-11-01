@@ -5,7 +5,7 @@
 =========================================================
 
 * Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
-* Copyright 2023 BalAsha - Nurture (https://balasha-nurture.web.app)
+* Copyright 2024 BalAsha - Nurture (https://balasha-nurture.web.app)
 
 Coded by www.bal-asha.com
 

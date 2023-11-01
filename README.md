@@ -285,7 +285,7 @@ If you have questions or need help integrating the product please [contact us](h
 
 ## Licensing
 
-- Copyright 2023 [BalAsha - Nurture](https://balasha-nurture.web.app?ref=readme-sudpr)
+- Copyright 2024 [BalAsha - Nurture](https://balasha-nurture.web.app?ref=readme-sudpr)
 - BalAsha - Nurture [license](https://balasha-nurture.web.app/license?ref=readme-sudpr)
 
 
