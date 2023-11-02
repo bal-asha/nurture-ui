@@ -5,9 +5,7 @@
 
  * Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
  * Copyright 2024 BalAsha - Nurture (https://balasha-nurture.web.app)
-
-
- =========================================================
+=========================================================
 
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
@@ -47,7 +45,7 @@ const apiNinja = axios.create({
 function Basic() {
 
     useEffect(() => {
-        console.log("This componentis mounted or updated.");
+        console.log("This component is mounted or updated.");
     });
 
     const [rememberMe, setRememberMe] = useState(false);
