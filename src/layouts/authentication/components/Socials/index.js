@@ -15,11 +15,46 @@
 import SoftButton from "components/SoftButton";
 import SoftBox from "components/SoftBox";
 
+
+import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import {auth, provider} from "../../../../platform/firebase";
+import {useEffect} from "react";
+import {setLayout, useSoftUIController} from "../../../../context";
+import {useLocation} from "react-router-dom";
+
 function Socials() {
 
   const loginViaFaceBook = (event) => console.log("Trying to login Via Facebook");
   const loginViaApple = (event) => console.log("Trying to login Via Apple");
-  const loginViaGoogle = (event) => console.log("Trying to login Via Google");
+  const loginViaGoogle = (event) => {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+          // This gives you a Google Access Token. You can use it to access the Google API.
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential.accessToken;
+          // The signed-in user info.
+          const user = result.user;
+          // IdP data available using getAdditionalUserInfo(result)
+          // ...
+
+        }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.customData.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+    console.log("Trying to login Via Google");
+  };
+
+ /* const [, dispatch] = useSoftUIController();
+  const { pathname } = useLocation();
+  useEffect(() => {
+    setLayout(dispatch, "dashboard");
+  }, [pathname]);*/
 
   return (
     <SoftBox display="flex" justifyContent="center">

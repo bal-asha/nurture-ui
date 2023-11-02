@@ -63,6 +63,7 @@ import SignInBasic from "layouts/authentication/sign-in/basic";
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
+import Widgets from "./layouts/pages/widgets";
 
 export default function App() {
     const [controller, dispatch] = useSoftUIController();
@@ -70,8 +71,11 @@ export default function App() {
     const [onMouseEnter, setOnMouseEnter] = useState(false);
     const [rtlCache, setRtlCache] = useState(null);
     const {pathname} = useLocation();
+    const [loggedUser, setLoggedUser] = useState(null);
 
+    const [user] = useAuthState(auth);
     // Cache for the rtl
+
     useMemo(() => {
         const cacheRtl = createCache({
             key: "rtl",
@@ -80,36 +84,24 @@ export default function App() {
 
         setRtlCache(cacheRtl);
     }, []);
-
     // Open sidenav when mouse enter on mini sidenav
     const handleOnMouseEnter = () => {
         if (miniSidenav && !onMouseEnter) {
             setMiniSidenav(dispatch, false);
             setOnMouseEnter(true);
         }
-    };
 
+    };
     // Close sidenav when mouse leave mini sidenav
     const handleOnMouseLeave = () => {
         if (onMouseEnter) {
             setMiniSidenav(dispatch, true);
             setOnMouseEnter(false);
         }
-    };
 
+    };
     // Change the openConfigurator state
     const handleConfiguratorOpen = () => setOpenConfigurator(dispatch, !openConfigurator);
-
-    // Setting the dir attribute for the body element
-    useEffect(() => {
-        document.body.setAttribute("dir", direction);
-    }, [direction]);
-
-    // Setting page scroll to 0 when changing the route
-    useEffect(() => {
-        document.documentElement.scrollTop = 0;
-        document.scrollingElement.scrollTop = 0;
-    }, [pathname]);
 
     const getRoutes = (allRoutes) =>
         allRoutes.map((route) => {
@@ -123,6 +115,25 @@ export default function App() {
 
             return null;
         });
+
+    useEffect(() => {
+
+        auth.onAuthStateChanged(user => {
+            setLoggedUser(user);
+        })
+    }, []);
+    console.log(loggedUser);
+    // Setting the dir attribute for the body element
+
+    useEffect(() => {
+        document.body.setAttribute("dir", direction);
+    }, [direction]);
+    // Setting page scroll to 0 when changing the route
+
+    useEffect(() => {
+        document.documentElement.scrollTop = 0;
+        document.scrollingElement.scrollTop = 0;
+    }, [pathname]);
 
     const configsButton = (
         <SoftBox
@@ -148,10 +159,8 @@ export default function App() {
         </SoftBox>
     );
 
-    const [user] = useAuthState(auth);
 
-
-    if (!user) {
+    if (!loggedUser) {
         return (
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
@@ -162,6 +171,13 @@ export default function App() {
             </ThemeProvider>
         );
 
+    } else if (loggedUser) {
+        return (
+            <ThemeProvider theme={theme}>
+                <CssBaseline/>
+                <Widgets/>
+            </ThemeProvider>
+        );
     } else {
         return direction === "rtl" ? (
             <CacheProvider value={rtlCache}>
@@ -191,7 +207,7 @@ export default function App() {
         ) : (
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                {user && layout === "dashboard" && (
+                {layout === "dashboard" && (
                     <>
                         <Sidenav
                             color={sidenavColor}

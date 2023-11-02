@@ -27,6 +27,4 @@ const auth = getAuth();
 const provider = new GoogleAuthProvider();
 provider.setCustomParameters({prompt: 'select_account'});
 
-export const signInWithGoogle = () => signInWithRedirect(auth, provider);
-
 export {auth, provider}
