@@ -16,9 +16,14 @@ import SoftButton from "components/SoftButton";
 import SoftBox from "components/SoftBox";
 
 function Socials() {
+
+  const loginViaFaceBook = (event) => console.log("Trying to login Via Facebook");
+  const loginViaApple = (event) => console.log("Trying to login Via Apple");
+  const loginViaGoogle = (event) => console.log("Trying to login Via Google");
+
   return (
     <SoftBox display="flex" justifyContent="center">
-      <SoftButton variant="outlined" color="light">
+      <SoftButton variant="outlined" color="light" onClick={loginViaFaceBook}>
         <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(3.000000, 3.000000)" fillRule="nonzero">
@@ -32,7 +37,7 @@ function Socials() {
         </svg>
       </SoftButton>
       <SoftBox px={1}>
-        <SoftButton variant="outlined" color="light">
+        <SoftButton variant="outlined" color="light" onClick={loginViaApple}>
           <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
             <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
               <g transform="translate(7.000000, 0.564551)" fill="#000000" fillRule="nonzero">
@@ -42,7 +47,7 @@ function Socials() {
           </svg>
         </SoftButton>
       </SoftBox>
-      <SoftButton variant="outlined" color="light">
+      <SoftButton variant="outlined" color="light" onClick={loginViaGoogle}>
         <svg width="24px" height="32px" viewBox="0 0 64 64" version="1.1">
           <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
             <g transform="translate(3.000000, 2.000000)" fillRule="nonzero">

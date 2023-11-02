@@ -6,7 +6,7 @@
  * Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
  * Copyright 2024 BalAsha - Nurture (https://balasha-nurture.web.app)
 
-=========================================================
+ =========================================================
 
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
  */
@@ -151,6 +151,18 @@ export default function App() {
     const [user] = useAuthState(auth);
 
 
+    if (!user) {
+        return (
+            <ThemeProvider theme={theme}>
+                <CssBaseline/>
+                <Routes>
+                    {getRoutes(routes)}
+                    <Route path="*" element={<Navigate to="/authentication/sign-in/basic"/>}/>
+                </Routes>
+            </ThemeProvider>
+        );
+
+    } else {
         return direction === "rtl" ? (
             <CacheProvider value={rtlCache}>
                 <ThemeProvider theme={themeRTL}>
@@ -179,11 +191,6 @@ export default function App() {
         ) : (
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                {!user && layout === "dashboard" && (
-                    <>
-                        <SignInBasic/>
-                    </>
-                )}
                 {user && layout === "dashboard" && (
                     <>
                         <Sidenav
@@ -201,9 +208,10 @@ export default function App() {
                 {layout === "vr" && <Configurator/>}
                 <Routes>
                     {getRoutes(routes)}
-                    <Route path="*" element={<Navigate to="/authentication/sign-in/basic"/>}/>
+                    <Route path="*" element={<Navigate to="/dashboards/default"/>}/>
                 </Routes>
             </ThemeProvider>
         );
+    }
 
 }
