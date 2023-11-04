@@ -16,7 +16,7 @@ import SoftButton from "components/SoftButton";
 import SoftBox from "components/SoftBox";
 
 
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { signInWithPopup,getAdditionalUserInfo, GoogleAuthProvider } from "firebase/auth";
 import {auth, provider} from "../../../../platform/firebase";
 import {useEffect} from "react";
 import {setLayout, useSoftUIController} from "../../../../context";
@@ -46,6 +46,7 @@ function Socials() {
           // The signed-in user info.
           const user = result.user;
           setAuthToken(token);
+          let additionalUserInfo = getAdditionalUserInfo(result);
           // IdP data available using getAdditionalUserInfo(result)
           // ...
 
