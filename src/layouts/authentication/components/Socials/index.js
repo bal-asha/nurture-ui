@@ -49,7 +49,7 @@ function Socials() {
           let additionalUserInfo = getAdditionalUserInfo(result);
           // IdP data available using getAdditionalUserInfo(result)
           // ...
-
+          window.location.href = '/dashboards/default';
         }).catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;

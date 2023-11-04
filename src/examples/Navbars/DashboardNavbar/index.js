@@ -56,6 +56,8 @@ import {
 // Images
 import team2 from "assets/images/team-2.jpg";
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
+import {auth} from "../../../platform/firebase";
+import LoginScreen from "../../../custom/LoginScreen";
 
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
@@ -134,6 +136,10 @@ function DashboardNavbar({ absolute, light, isMini }) {
     </Menu>
   );
 
+  function signOutUser() {
+    auth.signOut().then(r =>  <LoginScreen/>);
+  }
+
   return (
     <AppBar
       position={absolute ? "absolute" : navbarType}
@@ -157,7 +163,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
             </SoftBox>
             <SoftBox color={light ? "white" : "inherit"}>
               <Link to="/authentication/sign-in/basic">
-                <IconButton sx={navbarIconButton} size="small">
+                <IconButton sx={navbarIconButton} size="small" onClick={signOutUser}>
                   <Icon
                     sx={({ palette: { dark, white } }) => ({
                       color: light ? white.main : dark.main,
@@ -170,7 +176,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
                     fontWeight="medium"
                     color={light ? "white" : "dark"}
                   >
-                    Sign in
+                    Sign Out
                   </SoftTypography>
                 </IconButton>
               </Link>

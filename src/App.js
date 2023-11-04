@@ -64,6 +64,7 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import Widgets from "./layouts/pages/widgets";
+import LoginScreen from "./custom/LoginScreen";
 
 export default function App() {
     const [controller, dispatch] = useSoftUIController();
@@ -162,23 +163,10 @@ export default function App() {
 
     if (!loggedUser) {
         return (
-            <ThemeProvider theme={theme}>
-                <CssBaseline/>
-                <Routes>
-                    {getRoutes(routes)}
-                    <Route path="*" element={<Navigate to="/authentication/sign-in/basic"/>}/>
-                </Routes>
-            </ThemeProvider>
+            <LoginScreen/>
         );
 
-    } else if (loggedUser) {
-        return (
-            <ThemeProvider theme={theme}>
-                <CssBaseline/>
-                <Widgets/>
-            </ThemeProvider>
-        );
-    } else {
+    }  else {
         return direction === "rtl" ? (
             <CacheProvider value={rtlCache}>
                 <ThemeProvider theme={themeRTL}>
