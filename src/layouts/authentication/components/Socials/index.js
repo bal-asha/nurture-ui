@@ -21,11 +21,22 @@ import {auth, provider} from "../../../../platform/firebase";
 import {useEffect} from "react";
 import {setLayout, useSoftUIController} from "../../../../context";
 import {useLocation} from "react-router-dom";
+import axios from "axios";
 
 function Socials() {
 
   const loginViaFaceBook = (event) => console.log("Trying to login Via Facebook");
   const loginViaApple = (event) => console.log("Trying to login Via Apple");
+
+  const setAuthToken = (token) => {
+    if (token) {
+      // Apply the token to all requests' headers
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    } else {
+      // If there's no token, remove the Authorization header
+      delete axios.defaults.headers.common['Authorization'];
+    }
+  };
   const loginViaGoogle = (event) => {
     signInWithPopup(auth, provider)
         .then((result) => {
@@ -34,6 +45,7 @@ function Socials() {
           const token = credential.accessToken;
           // The signed-in user info.
           const user = result.user;
+          setAuthToken(token);
           // IdP data available using getAdditionalUserInfo(result)
           // ...
 
