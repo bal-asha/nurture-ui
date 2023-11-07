@@ -1,5 +1,5 @@
 import firebase from "firebase/compat/app";
-import {getAuth, signInWithPopup, signInWithRedirect, GoogleAuthProvider} from "firebase/auth";
+import {getAuth, signInWithPopup, signInWithRedirect, GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -24,7 +24,10 @@ firebase.initializeApp(firebaseConfig);
 
 const auth = getAuth();
 
-const provider = new GoogleAuthProvider();
-provider.setCustomParameters({prompt: 'select_account'});
+const googleProvider = new GoogleAuthProvider();
+googleProvider.setCustomParameters({prompt: 'select_account'});
 
-export {auth, provider}
+const  fbProvider = new FacebookAuthProvider();
+
+
+export {auth, googleProvider, fbProvider}
