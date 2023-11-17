@@ -16,16 +16,14 @@ import SoftButton from "components/SoftButton";
 import SoftBox from "components/SoftBox";
 
 
-import {signInWithPopup, getAdditionalUserInfo, GoogleAuthProvider} from "firebase/auth";
-import {auth, provider} from "../../../../platform/firebase";
+import {signInWithPopup, getAdditionalUserInfo, GoogleAuthProvider, FacebookAuthProvider} from "firebase/auth";
+import {auth, googleProvider, fbProvider} from "../../../../platform/firebase";
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
 
 function Socials() {
 
-    const loginViaFaceBook = (event) => console.log("Trying to login Via Facebook");
-    const loginViaApple = (event) => console.log("Trying to login Via Apple");
-
+    
     const setAuthToken = (token) => {
         if (token) {
             // Apply the token to all requests' headers
@@ -36,10 +34,37 @@ function Socials() {
         }
     };
 
+    const loginViaApple = (event) => console.log("Trying to login Via Apple");
+
+    const loginViaFaceBook = (event) => {
+        signInWithPopup(auth, fbProvider)
+            .then((result) => {
+      
+                const credential = FacebookAuthProvider.credentialFromResult(result);
+                const token = credential.accessToken;
+                const user = result.user;
+                setAuthToken(token);
+                let additionalUserInfo = getAdditionalUserInfo(result);
+                navigate('/dashboards/default');
+
+    })
+    .catch((error) => {
+      
+      const errorCode = error.code;
+      const errorMessage = error.message;      
+      const email = error.customData.email;    
+      const credential = FacebookAuthProvider.credentialFromError(error);
+    });
+  
+
+    console.log("Trying to login Via Facebook");
+}
+
+
   const navigate = useNavigate();
 
   const loginViaGoogle = (event) => {
-        signInWithPopup(auth, provider)
+        signInWithPopup(auth, googleProvider)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 const credential = GoogleAuthProvider.credentialFromResult(result);
