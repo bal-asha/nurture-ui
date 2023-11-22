@@ -33,7 +33,7 @@ function ProductCell({ image, name, orders }) {
           <SoftTypography component="span" variant="button" color="success">
             {orders}
           </SoftTypography>{" "}
-          orders
+          cases
         </SoftTypography>
       </SoftBox>
     </SoftBox>

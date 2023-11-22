@@ -19,19 +19,20 @@ import SoftBox from "components/SoftBox";
 import {signInWithPopup, getAdditionalUserInfo,  GoogleAuthProvider, FacebookAuthProvider, OAuthProvider} from "firebase/auth";
 import {auth, googleProvider, fbProvider, appleProvider} from "../../../../platform/firebase";
 import {useNavigate} from "react-router-dom";
-import axios from "axios";
+import axiosInstance from "../../../../platform/axiosConfig";
+
 
 function Socials() {
 
     
     const setAuthToken = (token) => {
-        axios.defaults.baseURL= 'http://localhost:8080'
+       //axios.defaults.baseURL= 'http://localhost:8080'
         if (token) {
             // Apply the token to all requests' headers
-            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         } else {
             // If there's no token, remove the Authorization header
-            delete axios.defaults.headers.common['Authorization'];
+            delete axiosInstance.defaults.headers.common['Authorization'];
         }
     };
 
