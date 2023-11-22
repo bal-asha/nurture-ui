@@ -37,6 +37,7 @@ import Icon from "@mui/material/Icon";
 import axiosInstance from "../../platform/axiosConfig";
 import SoftButton from "../../components/SoftButton";
 import SoftBadgeDot from "../../components/SoftBadgeDot";
+import SoftSelect from "../../components/SoftSelect";
 
 function AllowedUserOverview() {
 
@@ -78,9 +79,35 @@ function AllowedUserOverview() {
                                 });
                         }
 
+                        function getType() {
+
+                            const updateUserType = (event) => {
+                                const updateUserType = '/admin/allow-user/update-type?userId=' + allowedUser.id+'&type='+ event.value;
+                                axiosInstance.post(updateUserType)
+                                    .then((res) => {
+                                        findAllowedUsers()
+                                    })
+                                    .catch((err) => {
+                                        console.error(err)
+                                    });
+                            }
+
+                            return (
+                                <SoftSelect
+                                    placeholder={allowedUser.type}
+                                    options={[
+                                        { value: "ADMIN", label: "ADMIN" },
+                                        { value: "SUPERINTENDENT", label: "SUPERINTENDENT" },
+                                        { value: "WORKER", label: "WORKER" },
+                                    ]}
+                                    onChange={updateUserType}
+
+                                />);
+                        }
+
                         return {
                             user: <ProductCell image={nikeV22} name={allowedUser.emailId} orders={12}/>,
-                            type: <DefaultCell>{allowedUser.type}</DefaultCell>,
+                            type: getType(),
                             status: <DefaultCell><SoftBadgeDot badgeContent={allowedUser.status}
                                                                color={dotColor()}/></DefaultCell>,
                             action: (
