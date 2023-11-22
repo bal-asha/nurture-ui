@@ -25,6 +25,7 @@ function Socials() {
 
     
     const setAuthToken = (token) => {
+        axios.defaults.baseURL= 'http://localhost:8080'
         if (token) {
             // Apply the token to all requests' headers
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
@@ -42,7 +43,10 @@ function Socials() {
                 const token = credential.accessToken;
                 const idToken = credential.idToken;
                 const user = result.user;
-                setAuthToken(token);
+                user.getIdToken(true).then(token => {
+                    setAuthToken(token);
+                    let additionalUserInfo = getAdditionalUserInfo(result);
+                })
                 let additionalUserInfo = getAdditionalUserInfo(result);
                 navigate('/dashboards/default');
 
@@ -67,7 +71,10 @@ function Socials() {
                 const credential = FacebookAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
-                setAuthToken(token);
+                user.getIdToken(true).then(token => {
+                    setAuthToken(token);
+                    let additionalUserInfo = getAdditionalUserInfo(result);
+                })
                 let additionalUserInfo = getAdditionalUserInfo(result);
                 navigate('/dashboards/default');
 
@@ -95,7 +102,13 @@ function Socials() {
                 const token = credential.accessToken;
                 // The signed-in user info.
                 const user = result.user;
-                setAuthToken(token);
+               // setAuthToken(token);
+
+                user.getIdToken(true).then(token => {
+                    setAuthToken(token);
+                    let additionalUserInfo = getAdditionalUserInfo(result);
+                })
+
                 let additionalUserInfo = getAdditionalUserInfo(result);
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...

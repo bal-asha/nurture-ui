@@ -98,6 +98,8 @@ import Document from "examples/Icons/Document";
 import SpaceShip from "examples/Icons/SpaceShip";
 import CustomerSupport from "examples/Icons/CustomerSupport";
 import CreditCard from "examples/Icons/CreditCard";
+import BalAshaUser from "examples/Icons/BalAshaUser";
+import AllowedUserOverview from "./layouts/user";
 
 const routes = [
   {
@@ -145,7 +147,21 @@ const routes = [
       { name: "CRM", key: "crm", route: "/dashboards/crm", component: <CRM /> },
     ],
   },
-  { type: "title", title: "Pages", key: "title-pages" },
+  { type: "title", title: "MENU", key: "title-pages" },
+  {
+    type: "collapse",
+    name: "User",
+    key: "users",
+    icon: <BalAshaUser size="16px"/>,
+    collapse: [
+      {
+        name: "Allowed Users",
+        key: "allowed-users",
+        route: "/user/allowedUsers",
+        component: <AllowedUserOverview />,
+      },
+    ],
+  },
   {
     type: "collapse",
     name: "Pages",
