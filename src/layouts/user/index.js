@@ -32,12 +32,23 @@ import nikeV22 from "assets/images/ecommerce/blue-shoe.jpeg";
 import ProductCell from "layouts/ecommerce/overview/components/ProductCell";
 import RefundsCell from "layouts/ecommerce/overview/components/RefundsCell";
 import DefaultCell from "layouts/ecommerce/overview/components/DefaultCell";
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Icon from "@mui/material/Icon";
 import axiosInstance from "../../platform/axiosConfig";
 import SoftButton from "../../components/SoftButton";
 import SoftBadgeDot from "../../components/SoftBadgeDot";
 import SoftSelect from "../../components/SoftSelect";
+import {
+    Dialog,
+    DialogActions,
+    DialogContent,
+    DialogContentText,
+    DialogTitle,
+    useMediaQuery,
+    useTheme
+} from "@mui/material";
+import SoftInput from "../../components/SoftInput";
+
 
 function AllowedUserOverview() {
 
@@ -61,7 +72,7 @@ function AllowedUserOverview() {
                             const disableUserUri = '/admin/allow-user/disable?userId=' + allowedUser.id;
                             axiosInstance.post(disableUserUri)
                                 .then((res) => {
-                                     findAllowedUsers()
+                                    findAllowedUsers()
                                 })
                                 .catch((err) => {
                                     console.error(err)
@@ -72,7 +83,7 @@ function AllowedUserOverview() {
                             const enableUserUri = '/admin/allow-user/activate?userId=' + allowedUser.id;
                             axiosInstance.post(enableUserUri)
                                 .then((res) => {
-                                     findAllowedUsers()
+                                    findAllowedUsers()
                                 })
                                 .catch((err) => {
                                     console.error(err)
@@ -82,7 +93,7 @@ function AllowedUserOverview() {
                         function getType() {
 
                             const updateUserType = (event) => {
-                                const updateUserType = '/admin/allow-user/update-type?userId=' + allowedUser.id+'&type='+ event.value;
+                                const updateUserType = '/admin/allow-user/update-type?userId=' + allowedUser.id + '&type=' + event.value;
                                 axiosInstance.post(updateUserType)
                                     .then((res) => {
                                         findAllowedUsers()
@@ -96,9 +107,9 @@ function AllowedUserOverview() {
                                 <SoftSelect
                                     placeholder={allowedUser.type}
                                     options={[
-                                        { value: "ADMIN", label: "ADMIN" },
-                                        { value: "SUPERINTENDENT", label: "SUPERINTENDENT" },
-                                        { value: "WORKER", label: "WORKER" },
+                                        {value: "ADMIN", label: "ADMIN"},
+                                        {value: "SUPERINTENDENT", label: "SUPERINTENDENT"},
+                                        {value: "WORKER", label: "WORKER"},
                                     ]}
                                     onChange={updateUserType}
 
@@ -165,10 +176,23 @@ function AllowedUserOverview() {
     };
 
     const [tableContent, setTableContent] = useState(defaultTableData);
+
     useEffect(() => {
         findAllowedUsers()
     }, []);
 
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = () => {
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const theme = useTheme();
+    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
         <DashboardLayout>
@@ -178,10 +202,49 @@ function AllowedUserOverview() {
                     <Grid item xs={12}>
                         <Card>
                             <SoftBox pt={3} px={3}>
-                                <SoftTypography variant="h6" fontWeight="medium">
-                                    Allowed list of Users
-                                </SoftTypography>
+
+                                <Grid item container spacing={20} justify="flex-end" alignItems="center">
+                                    <Grid item xs={4} sm={4}>
+                                        <SoftTypography variant="h6" fontWeight="medium">
+                                            Allowed list of Users
+                                        </SoftTypography>
+                                    </Grid>
+                                    <Grid item xs={4} sm={4}/>
+
+                                    <Grid item xs={4} sm={4} container justify="flex-end" alignItems="center">
+                                        <Grid item xs={4} sm={4}/>
+                                        <Grid item xs={4} sm={4}/>
+                                        <SoftButton onClick={handleClickOpen} variant="text" color="success">
+                                            <b>+ </b> Add User</SoftButton>
+                                        <Dialog open={open} onClose={handleClose} aria-labelledby="dialog-title" fullScreen={fullScreen}>
+                                            <DialogTitle id="dialog-title">Add New User</DialogTitle>
+                                            <DialogContent>
+                                                <SoftBox mb={2}>
+                                                    <SoftInput fullWidth type="email" placeholder="enter email address"/>
+                                                </SoftBox>
+                                                <SoftBox mb={2}>
+                                                    <SoftSelect
+
+                                                        placeholder="ADMIN"
+                                                        options={[
+                                                            {value: "ADMIN", label: "ADMIN"},
+                                                            {value: "SUPERINTENDENT", label: "SUPERINTENDENT"},
+                                                            {value: "WORKER", label: "WORKER"},
+                                                        ]}
+
+                                                    />
+                                                </SoftBox>
+                                                <SoftBox/>
+                                            </DialogContent>
+                                            <DialogActions>
+                                                <SoftButton onClick={handleClose} color="primary">Add</SoftButton>
+                                                <SoftButton onClick={handleClose} color="primary">Close</SoftButton>
+                                            </DialogActions>
+                                        </Dialog>
+                                    </Grid>
+                                </Grid>
                             </SoftBox>
+
                             <SoftBox py={1}>
                                 <DataTable
                                     table={tableContent}
