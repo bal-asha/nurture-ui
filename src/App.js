@@ -65,6 +65,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import Widgets from "./layouts/pages/widgets";
 import LoginScreen from "./custom/LoginScreen";
+import axiosInstance from "./platform/axiosConfig";
 
 export default function App() {
     const [controller, dispatch] = useSoftUIController();
@@ -120,6 +121,9 @@ export default function App() {
     useEffect(() => {
 
         auth.onAuthStateChanged(user => {
+            user.getIdToken(true).then(token => {
+                axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            })
             setLoggedUser(user);
         })
     }, []);

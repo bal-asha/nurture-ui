@@ -28,6 +28,7 @@ function Socials() {
     const setAuthToken = (token) => {
        //axios.defaults.baseURL= 'http://localhost:8080'
         if (token) {
+            localStorage.setItem('token', token)
             // Apply the token to all requests' headers
             axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
         } else {
