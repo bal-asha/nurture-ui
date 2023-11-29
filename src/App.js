@@ -66,6 +66,7 @@ import Footer from "examples/Footer";
 import Widgets from "./layouts/pages/widgets";
 import LoginScreen from "./custom/LoginScreen";
 import axiosInstance from "./platform/axiosConfig";
+import { UserContext } from "custom/UserContext";
 
 export default function App() {
     const [controller, dispatch] = useSoftUIController();
@@ -74,7 +75,7 @@ export default function App() {
     const [rtlCache, setRtlCache] = useState(null);
     const {pathname} = useLocation();
     const [loggedUser, setLoggedUser] = useState(null);
-
+    
     const [user] = useAuthState(auth);
     // Cache for the rtl
 
@@ -125,9 +126,12 @@ export default function App() {
                 axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             })
             setLoggedUser(user);
+            // if(loggedUser)
+            // setInfoUser({"displayName":loggedUser.displayName,"email":loggedUser.email});
         })
     }, []);
     console.log(loggedUser);
+    
     // Setting the dir attribute for the body element
 
     useEffect(() => {
@@ -214,10 +218,12 @@ export default function App() {
                     </>
                 )}
                 {layout === "vr" && <Configurator/>}
+                <UserContext.Provider value={{"displayName":loggedUser.displayName,"email":loggedUser.email}}>
                 <Routes>
                     {getRoutes(routes)}
                     <Route path="*" element={<Navigate to="/dashboards/default"/>}/>
                 </Routes>
+                </UserContext.Provider>
             </ThemeProvider>
         );
     }
