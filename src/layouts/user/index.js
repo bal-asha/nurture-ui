@@ -119,8 +119,15 @@ function AllowedUserOverview() {
                                 />);
                         }
 
+                        function profilePicture() {
+                            if(allowedUser.profilePictureUrl){
+                                return allowedUser.profilePictureUrl;
+                            }
+                            return nikeV22;
+                        }
+
                         return {
-                            user: <ProductCell image={nikeV22} name={allowedUser.emailId} orders={12}/>,
+                            user: <ProductCell image={profilePicture()} name={allowedUser.emailId} orders={12}/>,
                             type: getType(),
                             status: <DefaultCell><SoftBadgeDot badgeContent={allowedUser.status}
                                                                color={dotColor()}/></DefaultCell>,
