@@ -48,6 +48,7 @@ import {
     useTheme
 } from "@mui/material";
 import SoftInput from "../../components/SoftInput";
+import SoftSnackbar from "../../components/SoftSnackbar";
 
 
 function AllowedUserOverview() {
@@ -96,7 +97,9 @@ function AllowedUserOverview() {
                                 const updateUserType = '/admin/allow-user/update-type?userId=' + allowedUser.id + '&type=' + event.value;
                                 axiosInstance.post(updateUserType)
                                     .then((res) => {
-                                        findAllowedUsers()
+                                        findAllowedUsers();
+                                        setLastUpdatedUserDetails({...allowedUser, "type": event.value});
+                                        setSuccessSB(true);
                                     })
                                     .catch((err) => {
                                         console.error(err)
@@ -219,6 +222,25 @@ function AllowedUserOverview() {
     const theme = useTheme();
     const fullScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
+    const [successSB, setSuccessSB] = useState(false);
+    const [lastUpdatedUserDetails, setLastUpdatedUserDetails] = useState({});
+    const openSuccessSB = () => setSuccessSB(true);
+    const closeSuccessSB = () => setSuccessSB(false);
+
+    const successNotification = (
+        <SoftSnackbar
+            color="success"
+            icon="check"
+            title="User details updated"
+            content={"User Type has been updated to " + lastUpdatedUserDetails.type + " for "+ lastUpdatedUserDetails.emailId}
+            dateTime="1 Second ago"
+            open={successSB}
+            onClose={closeSuccessSB}
+            close={closeSuccessSB}
+            bgWhite
+        />
+    );
+
     return (
         <DashboardLayout>
             <DashboardNavbar/>
@@ -233,6 +255,7 @@ function AllowedUserOverview() {
                                         <SoftTypography variant="h6" fontWeight="medium">
                                             Allowed list of Users
                                         </SoftTypography>
+                                        <SoftTypography color ="success" variant="h6" fontWeight="light">Information updated successully</SoftTypography>
                                     </Grid>
                                     <Grid item xs={4} sm={4}/>
 
@@ -285,6 +308,7 @@ function AllowedUserOverview() {
                     </Grid>
                 </Grid>
             </SoftBox>
+            {successSB && successNotification}
             <Footer/>
         </DashboardLayout>
     );
