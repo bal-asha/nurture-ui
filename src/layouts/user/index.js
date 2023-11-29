@@ -170,6 +170,7 @@ function AllowedUserOverview() {
         ),
     },];
 
+
     const defaultTableData = {
         columns: [...tableTitles],
         rows: [...tableDefaultRow],
@@ -182,6 +183,7 @@ function AllowedUserOverview() {
     }, []);
 
     const [open, setOpen] = useState(false);
+    const [dialogValues, setDialogValues] = useState({"emailId": "enter email address", "type": "ADMIN"});
 
     const handleClickOpen = () => {
         setOpen(true);
@@ -191,8 +193,31 @@ function AllowedUserOverview() {
         setOpen(false);
     };
 
+    const handleAdd = () => {
+        const addAllowedUserUri = '/admin/allow-user/add';
+
+        axiosInstance.post(addAllowedUserUri, dialogValues)
+            .then((res) => {
+                let data = res.data;
+                setOpen(false);
+                findAllowedUsers();
+            })
+            .catch((err) => {
+                console.error(err)
+            });
+    };
+
+    const handleEmailChange = (event) => {
+        const {name, value} = event.target;
+        setDialogValues({...dialogValues, [name]: value});
+    };
+
+    const handleTypeChange = (event) => {
+        setDialogValues({...dialogValues, "type": event.value});
+    };
+
     const theme = useTheme();
-    const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+    const fullScreen = useMediaQuery(theme.breakpoints.down('lg'));
 
     return (
         <DashboardLayout>
@@ -216,28 +241,30 @@ function AllowedUserOverview() {
                                         <Grid item xs={4} sm={4}/>
                                         <SoftButton onClick={handleClickOpen} variant="text" color="success">
                                             <b>+ </b> Add User</SoftButton>
-                                        <Dialog open={open} onClose={handleClose} aria-labelledby="dialog-title" fullScreen={fullScreen}>
+                                        <Dialog fullWidth maxWidth="xs" open={open} onClose={handleClose}
+                                                aria-labelledby="dialog-title" fullScreen={fullScreen}>
                                             <DialogTitle id="dialog-title">Add New User</DialogTitle>
                                             <DialogContent>
-                                                <SoftBox mb={2}>
-                                                    <SoftInput fullWidth type="email" placeholder="enter email address"/>
+                                                <SoftBox mb={2} minWidth={1}>
+                                                    <SoftInput name="emailId" type="email"
+                                                               placeholder={dialogValues.emailId}
+                                                               onChange={handleEmailChange}/>
                                                 </SoftBox>
-                                                <SoftBox mb={2}>
+                                                <SoftBox mb={4}>
                                                     <SoftSelect
-
-                                                        placeholder="ADMIN"
+                                                        placeholder={dialogValues.type}
                                                         options={[
                                                             {value: "ADMIN", label: "ADMIN"},
                                                             {value: "SUPERINTENDENT", label: "SUPERINTENDENT"},
                                                             {value: "WORKER", label: "WORKER"},
                                                         ]}
-
+                                                        onChange={handleTypeChange}
                                                     />
                                                 </SoftBox>
                                                 <SoftBox/>
                                             </DialogContent>
                                             <DialogActions>
-                                                <SoftButton onClick={handleClose} color="primary">Add</SoftButton>
+                                                <SoftButton onClick={handleAdd} color="primary">Add</SoftButton>
                                                 <SoftButton onClick={handleClose} color="primary">Close</SoftButton>
                                             </DialogActions>
                                         </Dialog>
