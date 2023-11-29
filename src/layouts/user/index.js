@@ -255,7 +255,6 @@ function AllowedUserOverview() {
                                         <SoftTypography variant="h6" fontWeight="medium">
                                             Allowed list of Users
                                         </SoftTypography>
-                                        <SoftTypography color ="success" variant="h6" fontWeight="light">Information updated successully</SoftTypography>
                                     </Grid>
                                     <Grid item xs={4} sm={4}/>
 
