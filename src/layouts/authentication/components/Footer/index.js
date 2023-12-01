@@ -33,7 +33,7 @@ function Footer() {
           <SoftBox display="flex" justifyContent="center" flexWrap="wrap" mb={3}>
             <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
               <SoftTypography component="a" href="#" variant="body2" color="secondary">
-                Company
+                Nurture
               </SoftTypography>
             </SoftBox>
             <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
@@ -48,7 +48,7 @@ function Footer() {
             </SoftBox>
             <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
               <SoftTypography component="a" href="#" variant="body2" color="secondary">
-                Product
+                Philosophy
               </SoftTypography>
             </SoftBox>
             <SoftBox mr={{ xs: 2, lg: 3, xl: 6 }}>
@@ -58,7 +58,7 @@ function Footer() {
             </SoftBox>
             <SoftBox>
               <SoftTypography component="a" href="#" variant="body2" color="secondary">
-                Pricing
+                Mission
               </SoftTypography>
             </SoftBox>
           </SoftBox>
