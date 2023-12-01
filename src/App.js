@@ -66,6 +66,7 @@ import Footer from "examples/Footer";
 import Widgets from "./layouts/pages/widgets";
 import LoginScreen from "./custom/LoginScreen";
 import axiosInstance, {setupResponseInterceptor} from "./platform/axiosConfig";
+import UnAuthorizedUser from "./layouts/default/error";
 
 export default function App() {
     const [controller, dispatch] = useSoftUIController();
@@ -201,6 +202,7 @@ export default function App() {
                     <Routes>
                         {getRoutes(routes)}
                         <Route path="*" element={<Navigate to="/dashboards/default"/>}/>
+                        <Route path="/error" element={<UnAuthorizedUser />} />
                     </Routes>
                 </ThemeProvider>
             </CacheProvider>
@@ -225,6 +227,7 @@ export default function App() {
                 <Routes>
                     {getRoutes(routes)}
                     <Route path="*" element={<Navigate to="/dashboards/default"/>}/>
+                    <Route path="/error" element={<UnAuthorizedUser />} />
                 </Routes>
             </ThemeProvider>
         );

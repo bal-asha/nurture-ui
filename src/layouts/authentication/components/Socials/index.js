@@ -16,7 +16,13 @@ import SoftButton from "components/SoftButton";
 import SoftBox from "components/SoftBox";
 
 
-import {signInWithPopup, getAdditionalUserInfo,  GoogleAuthProvider, FacebookAuthProvider, OAuthProvider} from "firebase/auth";
+import {
+    signInWithPopup,
+    getAdditionalUserInfo,
+    GoogleAuthProvider,
+    FacebookAuthProvider,
+    OAuthProvider
+} from "firebase/auth";
 import {auth, googleProvider, fbProvider, appleProvider} from "../../../../platform/firebase";
 import {useNavigate} from "react-router-dom";
 import axiosInstance from "../../../../platform/axiosConfig";
@@ -24,9 +30,9 @@ import axiosInstance from "../../../../platform/axiosConfig";
 
 function Socials() {
 
-    
+    const navigate = useNavigate();
     const setAuthToken = (token) => {
-       //axios.defaults.baseURL= 'http://localhost:8080'
+        //axios.defaults.baseURL= 'http://localhost:8080'
         if (token) {
             localStorage.setItem('token', token)
             // Apply the token to all requests' headers
@@ -40,63 +46,77 @@ function Socials() {
     const loginViaApple = (event) => {
         signInWithPopup(auth, appleProvider)
             .then((result) => {
-      
+
                 const credential = OAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const idToken = credential.idToken;
                 const user = result.user;
                 user.getIdToken(true).then(token => {
-                    setAuthToken(token);
+                    isUserAllowed(user.email, token);
                     let additionalUserInfo = getAdditionalUserInfo(result);
                 })
                 let additionalUserInfo = getAdditionalUserInfo(result);
-                navigate('/dashboards/default');
 
-    })
-    .catch((error) => {
-      
-      const errorCode = error.code;
-      const errorMessage = error.message;      
-      const email = error.customData.email;    
-      const credential = OAuthProvider.credentialFromError(error);
-    });
-  
 
-    console.log("Trying to login Via Apple");
-}
-    
-    
+            })
+            .catch((error) => {
+
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const email = error.customData.email;
+                const credential = OAuthProvider.credentialFromError(error);
+            });
+
+
+        console.log("Trying to login Via Apple");
+    }
+
+
     const loginViaFaceBook = (event) => {
         signInWithPopup(auth, fbProvider)
             .then((result) => {
-      
+
                 const credential = FacebookAuthProvider.credentialFromResult(result);
                 const token = credential.accessToken;
                 const user = result.user;
                 user.getIdToken(true).then(token => {
-                    setAuthToken(token);
+                    isUserAllowed(user.email, token);
                     let additionalUserInfo = getAdditionalUserInfo(result);
                 })
                 let additionalUserInfo = getAdditionalUserInfo(result);
-                navigate('/dashboards/default');
-
-    })
-    .catch((error) => {
-      
-      const errorCode = error.code;
-      const errorMessage = error.message;      
-      const email = error.customData.email;    
-      const credential = FacebookAuthProvider.credentialFromError(error);
-    });
-  
-
-    console.log("Trying to login Via Facebook");
-}
 
 
-  const navigate = useNavigate();
+            })
+            .catch((error) => {
 
-  const loginViaGoogle = (event) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                const email = error.customData.email;
+                const credential = FacebookAuthProvider.credentialFromError(error);
+            });
+
+
+        console.log("Trying to login Via Facebook");
+    }
+
+
+    function isUserAllowed(emailId, token) {
+        const isUserAllowedUri = '/admin/allow-user/allowed?emailId=' + emailId;
+        axiosInstance.post(isUserAllowedUri)
+            .then((res) => {
+                if (res) {
+                    setAuthToken(token);
+                    navigate('/dashboards/default');
+                } else {
+                    navigate('/error');
+                }
+            })
+            .catch((err) => {
+                console.error(err)
+            });
+    }
+
+    const loginViaGoogle = (event) => {
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
@@ -104,10 +124,9 @@ function Socials() {
                 const token = credential.accessToken;
                 // The signed-in user info.
                 const user = result.user;
-               // setAuthToken(token);
 
                 user.getIdToken(true).then(token => {
-                    setAuthToken(token);
+                    isUserAllowed(user.email, token);
                     let additionalUserInfo = getAdditionalUserInfo(result);
                 })
 
@@ -115,7 +134,7 @@ function Socials() {
                 // IdP data available using getAdditionalUserInfo(result)
                 // ...
                 // window.location.href = '/dashboards/default';
-              navigate('/dashboards/default');
+                //navigate('/dashboards/default');
             }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;

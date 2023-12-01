@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {auth} from "./firebase";
 
 const axiosInstance = axios.create({
     baseURL: 'http://localhost:8080', // Set your default base URL here
@@ -37,9 +38,19 @@ export const setupResponseInterceptor = (navigate) => {
     )
 }
 
+auth.onIdTokenChanged((user) => {
+    if (user) {
+        // User is signed in and refreshToken is refreshed
+        const refreshToken = user.getIdToken()
+        refreshToken.then(
+            token => {
+                localStorage.setItem('token', token);
+                axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            })
+    }});
 
 
 // headers: {
 //         'X-Api-Key': 'YjxocGqMsPzpfwyeet1d4w==eLuCryEwweI2mao3'
 //     }
-export default axiosInstance;
+    export default axiosInstance;
