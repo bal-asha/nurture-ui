@@ -25,7 +25,7 @@ import FormField from "layouts/ecommerce/products/new-product/components/FormFie
 function Pricing() {
   return (
     <SoftBox>
-      <SoftTypography variant="h5">Pricing</SoftTypography>
+      <SoftTypography variant="h5">Mission</SoftTypography>
       <SoftBox mt={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={3}>

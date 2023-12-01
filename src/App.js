@@ -130,10 +130,12 @@ export default function App() {
     useEffect(() => {
 
         auth.onAuthStateChanged(user => {
-            user.getIdToken(true).then(token => {
-                axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-            })
-            setLoggedUser(user);
+            if (user) {
+                user.getIdToken(true).then(token => {
+                    axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                })
+                setLoggedUser(user);
+            }
         })
     }, []);
     console.log(loggedUser);
@@ -179,7 +181,7 @@ export default function App() {
             <LoginScreen/>
         );
 
-    }  else {
+    } else {
         return direction === "rtl" ? (
             <CacheProvider value={rtlCache}>
                 <ThemeProvider theme={themeRTL}>
@@ -202,7 +204,7 @@ export default function App() {
                     <Routes>
                         {getRoutes(routes)}
                         <Route path="*" element={<Navigate to="/dashboards/default"/>}/>
-                        <Route path="/error" element={<UnAuthorizedUser />} />
+                        <Route path="/error" element={<UnAuthorizedUser/>}/>
                     </Routes>
                 </ThemeProvider>
             </CacheProvider>
@@ -227,7 +229,7 @@ export default function App() {
                 <Routes>
                     {getRoutes(routes)}
                     <Route path="*" element={<Navigate to="/dashboards/default"/>}/>
-                    <Route path="/error" element={<UnAuthorizedUser />} />
+                    <Route path="/error" element={<UnAuthorizedUser/>}/>
                 </Routes>
             </ThemeProvider>
         );
