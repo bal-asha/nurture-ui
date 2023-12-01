@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {auth} from "./firebase";
 
 const axiosInstance = axios.create({
     baseURL: 'http://localhost:8080', // Set your default base URL here
@@ -23,6 +22,22 @@ axiosInstance.interceptors.request.use(
 
         Promise.reject(error)
 );
+export const setupResponseInterceptor = (navigate) => {
+    axiosInstance.interceptors.response.use(
+        (response) => {
+            return response
+        },
+        (error) => {
+            if (error.response.status === 401 || error.response.status === 404) {
+                navigate('/authentication/sign-in/basic')
+            } else {
+                return Promise.reject(error)
+            }
+        }
+    )
+}
+
+
 
 // headers: {
 //         'X-Api-Key': 'YjxocGqMsPzpfwyeet1d4w==eLuCryEwweI2mao3'

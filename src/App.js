@@ -25,7 +25,7 @@ import RtlLanguarge from "layouts/pages/sweet-alerts/components/RtlLanguarge";
 import Grid from "@mui/material/Grid";
 
 // react-router components
-import {Routes, Route, Navigate, useLocation} from "react-router-dom";
+import {Routes, Route, Navigate, useLocation, useNavigate} from "react-router-dom";
 
 // @mui material components
 import {ThemeProvider} from "@mui/material/styles";
@@ -65,7 +65,7 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import Widgets from "./layouts/pages/widgets";
 import LoginScreen from "./custom/LoginScreen";
-import axiosInstance from "./platform/axiosConfig";
+import axiosInstance, {setupResponseInterceptor} from "./platform/axiosConfig";
 
 export default function App() {
     const [controller, dispatch] = useSoftUIController();
@@ -74,10 +74,18 @@ export default function App() {
     const [rtlCache, setRtlCache] = useState(null);
     const {pathname} = useLocation();
     const [loggedUser, setLoggedUser] = useState(null);
+    const [responseInterceptor, setResponseInterceptor] = useState(false)
 
     const [user] = useAuthState(auth);
-    // Cache for the rtl
 
+    //Setup the Response Interceptor globally for once
+    const navigate = useNavigate()
+    if (!responseInterceptor) {
+        setResponseInterceptor(true)
+        setupResponseInterceptor(navigate)
+    }
+
+    // Cache for the rtl
     useMemo(() => {
         const cacheRtl = createCache({
             key: "rtl",
