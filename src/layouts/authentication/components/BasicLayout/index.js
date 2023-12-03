@@ -30,11 +30,12 @@ import Footer from "layouts/authentication/components/Footer";
 
 // BalAsha - Nurture page layout routes
 import pageRoutes from "page.routes";
+import LoginNavbar from "../../../../examples/Navbars/DefaultNavbar/BespokeNavBar";
 
 function BasicLayout({ title, description, image, children }) {
   return (
     <PageLayout>
-      <DefaultNavbar
+      <LoginNavbar
         routes={pageRoutes}
         action={{
           type: "external",

@@ -30,15 +30,10 @@ import PlaceholderCard from "examples/Cards/PlaceholderCard";
 // Overview page components
 import Header from "layouts/pages/profile/components/Header";
 import PlatformSettings from "layouts/pages/profile/profile-overview/components/PlatformSettings";
+import ProfileInformation from "layouts/pages/profile/my-profile/ProfileInformation";
+import EditUser from "layouts/pages/profile/my-profile/edit-user";
 // Data
 import profilesListData from "layouts/pages/profile/profile-overview/data/profilesListData";
-
-// @mui icons
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import React, { useContext } from 'react';
-import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
 
 // Images
 import homeDecor1 from "assets/images/home-decor-1.jpg";
@@ -49,49 +44,18 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
-function Overview() {
+function ProfileOverview() {
   return (
     <DashboardLayout>
       <Header />
       <SoftBox mt={5} mb={3}>
         <Grid container spacing={3}>
-          <Grid item xs={12} md={6} xl={4}>
-            <PlatformSettings />
+          <Grid item xs={12} md={4} xl={4}>
+            <ProfileInformation />
           </Grid>
-          <Grid item xs={12} md={6} xl={4}>
-          <ProfileInfoCard
-              title="profile information"
-              description="Kalash"
-              info={{
-                fullName: "Alec M. Thompson",
-                mobile: "(44) 123 1234 123",
-                email: "alecthompson@mail.com",
-                location: "USA",
-                fullabcs: "Alec M. Thompson",
-              }}
-              social={[
-                {
-                  link: "https://www.facebook.com/BalAsha/",
-                  icon: <FacebookIcon />,
-                  color: "facebook",
-                },
-                {
-                  link: "https://twitter.com/balasha",
-                  icon: <TwitterIcon />,
-                  color: "twitter",
-                },
-                {
-                  link: "https://www.instagram.com/balashaofficial/",
-                  icon: <InstagramIcon />,
-                  color: "instagram",
-                },
-              ]}
-              action={{ route: "", tooltip: "Edit Profile" }}
-            />
-          </Grid>
-          <Grid item xs={12} xl={4}>
-             <ProfilesList title="conversations" profiles={profilesListData} /> 
-          </Grid>
+          {/* <Grid item xs={12} md={8} xl={8}>
+          <NewUser />
+          </Grid> */}
         </Grid>
       </SoftBox>
       <SoftBox mb={3}>
@@ -183,4 +147,4 @@ function Overview() {
   );
 }
 
-export default Overview;
+export default ProfileOverview;

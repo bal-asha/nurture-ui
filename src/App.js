@@ -25,7 +25,7 @@ import RtlLanguarge from "layouts/pages/sweet-alerts/components/RtlLanguarge";
 import Grid from "@mui/material/Grid";
 
 // react-router components
-import {Routes, Route, Navigate, useLocation} from "react-router-dom";
+import {Routes, Route, Navigate, useLocation, useNavigate} from "react-router-dom";
 
 // @mui material components
 import {ThemeProvider} from "@mui/material/styles";
@@ -65,7 +65,8 @@ import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import Widgets from "./layouts/pages/widgets";
 import LoginScreen from "./custom/LoginScreen";
-import axiosInstance from "./platform/axiosConfig";
+import axiosInstance, {setupResponseInterceptor} from "./platform/axiosConfig";
+import UnAuthorizedUser from "./layouts/default/error";
 import { UserContext } from "custom/UserContext";
 
 export default function App() {
@@ -75,10 +76,17 @@ export default function App() {
     const [rtlCache, setRtlCache] = useState(null);
     const {pathname} = useLocation();
     const [loggedUser, setLoggedUser] = useState(null);
-    
+    const [responseInterceptor, setResponseInterceptor] = useState(false)
     const [user] = useAuthState(auth);
-    // Cache for the rtl
 
+    //Setup the Response Interceptor globally for once
+    const navigate = useNavigate()
+    if (!responseInterceptor) {
+        setResponseInterceptor(true)
+        setupResponseInterceptor(navigate)
+    }
+
+    // Cache for the rtl
     useMemo(() => {
         const cacheRtl = createCache({
             key: "rtl",
@@ -122,12 +130,12 @@ export default function App() {
     useEffect(() => {
 
         auth.onAuthStateChanged(user => {
-            user.getIdToken(true).then(token => {
-                axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-            })
-            setLoggedUser(user);
-            // if(loggedUser)
-            // setInfoUser({"displayName":loggedUser.displayName,"email":loggedUser.email});
+            if (user) {
+                user.getIdToken(true).then(token => {
+                    axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                })
+                setLoggedUser(user);
+            }
         })
     }, []);
     console.log(loggedUser);
@@ -174,7 +182,7 @@ export default function App() {
             <LoginScreen/>
         );
 
-    }  else {
+    } else {
         return direction === "rtl" ? (
             <CacheProvider value={rtlCache}>
                 <ThemeProvider theme={themeRTL}>
@@ -197,6 +205,7 @@ export default function App() {
                     <Routes>
                         {getRoutes(routes)}
                         <Route path="*" element={<Navigate to="/dashboards/default"/>}/>
+                        <Route path="/error" element={<UnAuthorizedUser/>}/>
                     </Routes>
                 </ThemeProvider>
             </CacheProvider>
@@ -218,10 +227,11 @@ export default function App() {
                     </>
                 )}
                 {layout === "vr" && <Configurator/>}
-                <UserContext.Provider value={{"displayName":loggedUser.displayName,"email":loggedUser.email}}>
+                <UserContext.Provider value={{"userName":loggedUser.displayName,"userEmail":loggedUser.email}}>
                 <Routes>
                     {getRoutes(routes)}
                     <Route path="*" element={<Navigate to="/dashboards/default"/>}/>
+                    <Route path="/error" element={<UnAuthorizedUser/>}/>
                 </Routes>
                 </UserContext.Provider>
             </ThemeProvider>

@@ -23,8 +23,34 @@ axiosInstance.interceptors.request.use(
 
         Promise.reject(error)
 );
+export const setupResponseInterceptor = (navigate) => {
+    axiosInstance.interceptors.response.use(
+        (response) => {
+            return response
+        },
+        (error) => {
+            if (error.response.status === 401 || error.response.status === 404) {
+                navigate('/authentication/sign-in/basic')
+            } else {
+                return Promise.reject(error)
+            }
+        }
+    )
+}
+
+auth.onIdTokenChanged((user) => {
+    if (user) {
+        // User is signed in and refreshToken is refreshed
+        const refreshToken = user.getIdToken()
+        refreshToken.then(
+            token => {
+                localStorage.setItem('token', token);
+                axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            })
+    }});
+
 
 // headers: {
 //         'X-Api-Key': 'YjxocGqMsPzpfwyeet1d4w==eLuCryEwweI2mao3'
 //     }
-export default axiosInstance;
+    export default axiosInstance;

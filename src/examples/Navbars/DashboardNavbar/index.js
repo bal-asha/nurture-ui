@@ -14,7 +14,7 @@
 import {useState, useEffect} from "react";
 
 // react-router components
-import {useLocation, Link} from "react-router-dom";
+import {useLocation, Link, useNavigate} from "react-router-dom";
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -57,8 +57,6 @@ import {
 import team2 from "assets/images/team-2.jpg";
 import logoSpotify from "assets/images/small-logos/logo-spotify.svg";
 import {auth} from "../../../platform/firebase";
-import LoginScreen from "../../../custom/LoginScreen";
-import Avatar from "../../../assets/theme/components/avatar";
 import SoftAvatar from "../../../components/SoftAvatar";
 
 function DashboardNavbar({absolute, light, isMini}) {
@@ -138,8 +136,9 @@ function DashboardNavbar({absolute, light, isMini}) {
         </Menu>
     );
 
+    const navigate = useNavigate();
     function signOutUser() {
-        auth.signOut().then(r => <LoginScreen/>);
+        auth.signOut().then(r => navigate('/authentication/sign-in/basic'));
     }
 
     const DisplayImage = () => {
@@ -177,19 +176,18 @@ function DashboardNavbar({absolute, light, isMini}) {
                             />
                         </SoftBox>
                         <SoftBox color={light ? "white" : "inherit"}>
-                            <Link to="/authentication/sign-in/basic">
-                                <IconButton sx={navbarIconButton} size="small" onClick={signOutUser}>
+                                <IconButton sx={navbarIconButton} size="small">
 
                                   <DisplayImage/>
                                     <SoftTypography
                                         variant="button"
                                         fontWeight="medium"
                                         color={light ? "white" : "dark"}
+                                        onClick={signOutUser}
                                     >
                                         Sign Out
                                     </SoftTypography>
                                 </IconButton>
-                            </Link>
                             <IconButton
                                 size="small"
                                 color="inherit"

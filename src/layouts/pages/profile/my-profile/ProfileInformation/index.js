@@ -11,7 +11,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -33,18 +33,39 @@ function ProfileInformation() {
   const [followsMe, setFollowsMe] = useState(true);
   const [answersPost, setAnswersPost] = useState(false);
   const loggedUser = useContext(UserContext);
+  const [user,setUser]=useState(null);
+
+
+
+  useEffect(()=>{
+
+   const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(loggedUser),
+
+    };
+   fetch(process.env.REACT_APP_PUBLIC_URL + '/user', requestOptions)
+    .then(response => response.json())
+    .then(data => setUser(data));
+
+  },[])
+
 console.log("--------------------kalash"+JSON.stringify(loggedUser));
 
-  return (
+  
+    if(user && user != null){
+
+      return (
     <ProfileInfoCard
               title="profile information"
-              description="Kalash"
               info={{
-                fullName: "Alec M. Thompson",
-                mobile: "(44) 123 1234 123",
-                email: "alecthompson@mail.com",
-                location: "USA",
-                fullabcs: "Alec M. Thompson",
+                fullName: loggedUser.userName,
+                email: loggedUser.userEmail,
+                mobile: user.mobileNo,
+                adress: user.address,
+                userId: user.idDtls,
+                userId: user.idProofType,
               }}
               social={[
                 {
@@ -63,9 +84,10 @@ console.log("--------------------kalash"+JSON.stringify(loggedUser));
                   color: "instagram",
                 },
               ]}
-              action={{ route: "", tooltip: "Edit Profile" }}
+              action={{ route: "/pages/users/edit-user", tooltip: "Edit Profile" }}
             />
-  );
+    );
+}
 }
 
 export default ProfileInformation;
