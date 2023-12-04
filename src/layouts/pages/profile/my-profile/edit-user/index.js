@@ -46,7 +46,7 @@ import form from "layouts/pages/profile/my-profile/edit-user/schemas/form";
 import initialValues from "layouts/pages/profile/my-profile/edit-user/schemas/initialValues";
 
 function getSteps() {
-  return ["User Info", "Address", "Social", "Profile"];
+  return ["User Info", "Address"];
 }
 
 function getStepContent(stepIndex, formData) {
@@ -55,10 +55,6 @@ function getStepContent(stepIndex, formData) {
       return <UserInfo formData={formData} />;
     case 1:
       return <Address formData={formData} />;
-    case 2:
-      return <Socials formData={formData} />;
-    case 3:
-      return <Profile formData={formData} />;
     default:
       return null;
   }
@@ -70,6 +66,7 @@ function NewUser() {
   const { formId, formField } = form;
   const currentValidation = validations[activeStep];
   const isLastStep = activeStep === steps.length - 1;
+  const {data,setData}=useState("");
 
   const sleep = (ms) =>
     new Promise((resolve) => {
@@ -82,6 +79,17 @@ function NewUser() {
 
     // eslint-disable-next-line no-alert
     alert(JSON.stringify(values, null, 2));
+    alert(JSON.stringify(state, null, 2));
+    alert(JSON.stringify(email, null, 2));
+    
+    const requestOptions = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(values)
+  };
+  fetch(process.env.REACT_APP_PUBLIC_URL + '/update-user', requestOptions)
+      .then(response => response.json())
+      .then(data => setUser(data));
 
     actions.setSubmitting(false);
     actions.resetForm();

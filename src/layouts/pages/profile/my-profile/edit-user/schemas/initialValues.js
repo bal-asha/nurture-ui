@@ -11,44 +11,52 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import checkout from "layouts/pages/users/new-user/schemas/form";
+import checkout from "layouts/pages/profile/my-profile/edit-user/schemas/form";
 
 const {
   formField: {
-    firstName,
-    lastName,
-    company,
-    email,
-    password,
-    repeatPassword,
+    userName, 
+    idDtls,
+    mobileNo,
     address1,
     address2,
     city,
     zip,
-    twitter,
-    facebook,
-    instagram,
-    publicEmail,
-    bio,
+    userEmail
+    // firstName,
+    // lastName,
+    // company,
+    // email,
+    // password,
+    // repeatPassword,
+
+    // twitter,
+    // facebook,
+    // instagram,
+    // publicEmail,
+    // bio,
   },
 } = checkout;
 
 const initialValues = {
-  [firstName.name]: "",
-  [lastName.name]: "",
-  [company.name]: "",
-  [email.name]: "",
-  [password.name]: "",
-  [repeatPassword.name]: "",
+  [userName.name]:"",
+  [idDtls.name]:"",
+  [mobileNo.name]:"",
   [address1.name]: "",
   [address2.name]: "",
   [city.name]: "",
   [zip.name]: "",
-  [twitter.name]: "",
-  [facebook.name]: "",
-  [instagram.name]: "",
-  [publicEmail.name]: "",
-  [bio.name]: "",
+  [userEmail.name]: "",
+  // [firstName.name]: "",
+  // [lastName.name]: "",
+  // [company.name]: "",
+  // [password.name]: "",
+  // [repeatPassword.name]: "",
+  // [twitter.name]: "",
+  // [facebook.name]: "",
+  // [instagram.name]: "",
+  // [publicEmail.name]: "",
+  // [bio.name]: "",
 };
 
 export default initialValues;

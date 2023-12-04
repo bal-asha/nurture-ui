@@ -16,25 +16,35 @@ import PropTypes from "prop-types";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
+
 
 // BalAsha - Nurture components
 import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
+import SoftInput from "components/SoftInput";
 
 // NewUser page components
 import FormField from "layouts/pages/profile/my-profile/edit-user/components/FormField";
+import { UserContext } from "custom/UserContext";
+import { useState ,useContext} from "react";
 
 function UserInfo({ formData }) {
+
+  let [idProofType,setIdProofType]=useState("Adhar");
+  const email=useContext(UserContext);
   const { formField, values, errors, touched } = formData;
-  const { firstName, lastName, company, email, password, repeatPassword } = formField;
+  const { userName, 
+    idDtls,
+    mobileNo,} = formField;
   const {
-    firstName: firstNameV,
-    lastName: lastNameV,
-    company: companyV,
-    email: emailV,
-    password: passwordV,
-    repeatPassword: repeatPasswordV,
+    userName: userNameV,
+    idDtls:idDtlsV,
+    mobileNo:mobileNoV,
   } = values;
+
+  const handleSetState = (event) => setIdProofType(event.target.value);
 
   return (
     <SoftBox>
@@ -50,44 +60,53 @@ function UserInfo({ formData }) {
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={firstName.type}
-              label={firstName.label}
-              name={firstName.name}
-              value={firstNameV}
-              placeholder={firstName.placeholder}
-              error={errors.firstName && touched.firstName}
-              success={firstNameV.length > 0 && !errors.firstName}
+              type={userName.type}
+              label={userName.label}
+              name={userName.name}
+              value={userNameV}
+              placeholder={userName.placeholder}
+              error={errors.userName && touched.userName}
+              success={userNameV.length > 0 && !errors.userName}
             />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={lastName.type}
-              label={lastName.label}
-              name={lastName.name}
-              value={lastNameV}
-              placeholder={lastName.placeholder}
-              error={errors.lastName && touched.lastName}
-              success={lastNameV.length > 0 && !errors.lastName}
+              type={mobileNo.type}
+              label={mobileNo.label}
+              name={mobileNo.name}
+              value={mobileNoV}
+              placeholder={mobileNo.placeholder}
+              error={errors.mobileNo && touched.mobileNo}
+              success={mobileNoV.length > 0 && !errors.mobileNo}
             />
           </Grid>
         </Grid>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <FormField
-              type={company.type}
-              label={company.label}
-              name={company.name}
-              value={companyV}
-              placeholder={company.placeholder}
-            />
+          <SoftBox mb={1} ml={0.5} lineHeight={0} display="inline-block">
+              <SoftTypography
+                component="label"
+                variant="caption"
+                fontWeight="bold"
+                textTransform="capitalize"
+              >
+                idProofType
+              </SoftTypography>
+            </SoftBox>
+            <Select input={<SoftInput />} value={idProofType} onChange={handleSetState}>
+              <MenuItem value="Adhar">Adhar</MenuItem>
+              <MenuItem value="Pan Card">Pan Card</MenuItem>
+              <MenuItem value="Voter Id Card">Voter Id Card</MenuItem>
+              <MenuItem value="Driving License">Driving License</MenuItem>
+            </Select>
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField
-              type={company.type}
-              label={company.label}
-              name={company.name}
-              value={companyV}
-              placeholder={company.placeholder}
+              type={idDtls.type}
+              label={idDtls.label}
+              name={idDtls.name}
+              value={idDtlsV}
+              placeholder={idDtls.placeholder}
             />
           </Grid>
         </Grid>

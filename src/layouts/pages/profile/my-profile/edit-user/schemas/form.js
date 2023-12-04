@@ -14,49 +14,26 @@
 const form = {
   formId: "new-user-form",
   formField: {
-    firstName: {
-      name: "firstName",
-      label: "first name",
+    userName: {
+      name: "userName",
+      label: "Full Name",
       type: "text",
       placeholder: "eg. Micheal",
       errorMsg: "First name is required.",
     },
-    lastName: {
-      name: "lastName",
-      label: "last name",
+    idDtls:{
+      name: "idDtls",
+      label: "Id No.",
       type: "text",
-      placeholder: "eg. Prior",
-      errorMsg: "Last name is required.",
+      placeholder: "eg. XXXX XXXX XXXX",
+      errorMsg: "ID details are required.",
     },
-    company: {
-      name: "company",
-      label: "company",
+    mobileNo:{
+      name: "mobileNo",
+      label: "Mobile No",
       type: "text",
-      placeholder: "eg. BalAsha - Nurture",
-    },
-    email: {
-      name: "email",
-      label: "email address",
-      type: "email",
-      placeholder: "eg. soft@dashboard.come",
-      errorMsg: "Email address is required.",
-      invalidMsg: "Your email address is invalid",
-    },
-    password: {
-      name: "password",
-      label: "password",
-      type: "password",
-      placeholder: "******",
-      errorMsg: "Password is required.",
-      invalidMsg: "Your password should be more than 6 characters.",
-    },
-    repeatPassword: {
-      name: "repeatPassword",
-      label: "repeat password",
-      type: "password",
-      placeholder: "******",
-      errorMsg: "Password is required.",
-      invalidMsg: "Your password doesn't match.",
+      placeholder: "eg. Micheal",
+      errorMsg: "First name is required.",
     },
     address1: {
       name: "address1",
@@ -86,37 +63,15 @@ const form = {
       errorMsg: "Zip is required.",
       invalidMsg: "Zipcode is not valie (e.g. 70000).",
     },
-    twitter: {
-      name: "twitter",
-      label: "twitter handle",
-      type: "text",
-      placeholder: "@soft",
-      errorMsg: "Twitter profile is required.",
-    },
-    facebook: {
-      name: "facebook",
-      label: "facebook account",
-      type: "text",
-      placeholder: "https://...",
-    },
-    instagram: {
-      name: "instagram",
-      label: "instagram account",
-      type: "text",
-      placeholder: "https://...",
-    },
-    publicEmail: {
-      name: "publicEmail",
-      label: "public email",
+    userEmail: {
+      name: "userEmail",
+      label: "email address",
       type: "email",
-      placeholder: "Use an address you don't use frequently",
+      placeholder: "eg. soft@dashboard.come",
+      errorMsg: "Email address is required.",
+      invalidMsg: "Your email address is invalid",
     },
-    bio: {
-      name: "bio",
-      label: "bio",
-      placeholder: "Say a few words about who you are or what you're working on.",
-    },
-  },
+  }
 };
 
 export default form;
