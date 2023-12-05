@@ -27,13 +27,12 @@ import SoftInput from "components/SoftInput";
 
 // NewUser page components
 import FormField from "layouts/pages/profile/my-profile/edit-user/components/FormField";
-import { UserContext } from "custom/UserContext";
 import { useState ,useContext} from "react";
 
-function UserInfo({ formData }) {
+function UserInfo({ formData, updateUserInfoDetail}) {
 
   let [idProofType,setIdProofType]=useState("Adhar");
-  const email=useContext(UserContext);
+ 
   const { formField, values, errors, touched } = formData;
   const { userName, 
     idDtls,
@@ -44,7 +43,11 @@ function UserInfo({ formData }) {
     mobileNo:mobileNoV,
   } = values;
 
-  const handleSetState = (event) => setIdProofType(event.target.value);
+  const handleSetState = (event) => {
+    setIdProofType(event.target.value);
+    updateUserInfoDetail(event.target.value);
+
+    }
 
   return (
     <SoftBox>
@@ -119,6 +122,7 @@ function UserInfo({ formData }) {
 // typechecking props for UserInfo
 UserInfo.propTypes = {
   formData: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
+  updateUserInfoDetail: PropTypes.any
 };
 
 export default UserInfo;

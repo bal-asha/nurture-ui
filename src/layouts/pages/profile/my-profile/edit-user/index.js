@@ -11,7 +11,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+import { useState ,useContext} from "react";
 
 // formik components
 import { Formik, Form } from "formik";
@@ -44,17 +44,18 @@ import Header from "layouts/pages/profile/components/Header";
 import validations from "layouts/pages/profile/my-profile/edit-user/schemas/validations";
 import form from "layouts/pages/profile/my-profile/edit-user/schemas/form";
 import initialValues from "layouts/pages/profile/my-profile/edit-user/schemas/initialValues";
+import { UserContext } from "custom/UserContext";
 
 function getSteps() {
   return ["User Info", "Address"];
 }
 
-function getStepContent(stepIndex, formData) {
+function getStepContent(stepIndex, formData,updateUserInfoDetail,updateAdressDetail) {
   switch (stepIndex) {
     case 0:
-      return <UserInfo formData={formData} />;
+      return <UserInfo formData={formData} updateUserInfoDetail={updateUserInfoDetail} />;
     case 1:
-      return <Address formData={formData} />;
+      return <Address formData={formData} updateAdressDetail={updateAdressDetail}/>;
     default:
       return null;
   }
@@ -66,7 +67,21 @@ function NewUser() {
   const { formId, formField } = form;
   const currentValidation = validations[activeStep];
   const isLastStep = activeStep === steps.length - 1;
-  const {data,setData}=useState("");
+  const [data,setData]=useState("");
+  const [user,setUser]=useState("");
+  const [idProofType,setIdProofType]=useState("Adhar");
+  const [state,setState]=useState(null);
+  const userSessionDetail=useContext(UserContext);
+
+
+
+
+  const updateUserInfoDetail =(idProofType_)=>{
+    setIdProofType(idProofType_);
+  }
+  const updateAdressDetail= (state_)=>{
+   setState(state_);
+  }
 
   const sleep = (ms) =>
     new Promise((resolve) => {
@@ -77,15 +92,23 @@ function NewUser() {
   const submitForm = async (values, actions) => {
     await sleep(1000);
 
+    let userDetail=values;
+    userDetail ={
+      ...userDetail,  // Spread the previous state
+      idProofType: idProofType, // Add or update properties
+      userEmail: userSessionDetail.userEmail,
+      
+      // ... Add more key-value pairs as needed
+    };
+
     // eslint-disable-next-line no-alert
-    alert(JSON.stringify(values, null, 2));
-    alert(JSON.stringify(state, null, 2));
-    alert(JSON.stringify(email, null, 2));
+    alert(JSON.stringify(userDetail, null, 2)) ;
+
     
     const requestOptions = {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(values)
+      body: JSON.stringify(userDetail)
   };
   fetch(process.env.REACT_APP_PUBLIC_URL + '/update-user', requestOptions)
       .then(response => response.json())
@@ -135,7 +158,7 @@ function NewUser() {
                           touched,
                           formField,
                           errors,
-                        })}
+                        },updateUserInfoDetail,updateAdressDetail)}
                         <SoftBox mt={2} width="100%" display="flex" justifyContent="space-between">
                           {activeStep === 0 ? (
                             <SoftBox />

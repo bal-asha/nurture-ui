@@ -29,13 +29,16 @@ import SoftInput from "components/SoftInput";
 // NewUser page components
 import FormField from "layouts/pages/profile/my-profile/edit-user/components/FormField";
 
-function Address({ formData }) {
+function Address({ formData ,updateAdressDetail}) {
   const [state, setState] = useState("...");
   const { formField, values, errors, touched } = formData;
   const { address1, address2, city, zip } = formField;
   const { address1: address1V, address2: address2V, city: cityV, zip: zipV } = values;
 
-  const handleSetState = (event) => setState(event.target.value);
+  const handleSetState = (event) => {
+    setState(event.target.value);
+    updateAdressDetail(event.target.value);
+  }
 
   return (
     <SoftBox>
@@ -117,6 +120,7 @@ function Address({ formData }) {
 // typechecking props for Address
 Address.propTypes = {
   formData: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
+  updateAdressDetail: PropTypes.any
 };
 
 export default Address;
