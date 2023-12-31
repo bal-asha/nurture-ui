@@ -28,12 +28,18 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { UserContext } from "custom/UserContext";
 import React, { useContext } from 'react';
 import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
+import axiosInstance from "platform/axiosConfig.js";
+
 
 function ProfileInformation() {
   const [followsMe, setFollowsMe] = useState(true);
   const [answersPost, setAnswersPost] = useState(false);
   const loggedUser = useContext(UserContext);
   const [user,setUser]=useState(null);
+  let info_data={
+    fullName: loggedUser.userName,
+    email: loggedUser.userEmail,};
+
 
 
 
@@ -45,28 +51,39 @@ function ProfileInformation() {
     body: JSON.stringify(loggedUser),
 
     };
-   fetch(process.env.REACT_APP_PUBLIC_URL + '/user', requestOptions)
-    .then(response => response.json())
-    .then(data => setUser(data));
+
+    const locationsUri = '/get-users';
+    axiosInstance.get(locationsUri,loggedUser).then(data => {
+      setUser(data.data[0]);
+     
+    }).catch((err) => {
+    console.error(err)
+    });
 
   },[])
 
-console.log("--------------------kalash"+JSON.stringify(loggedUser));
+    // console.log(JSON.stringify(loggedUser));
 
-  
     if(user && user != null){
+
+      info_data={
+        fullName: loggedUser.userName,
+        email: loggedUser.userEmail,      
+        mobile: user.mobileNo,
+        adress: user.address,
+        userId: user.idDtls,
+        userId: user.idProofType,
+      }
+
+    }
+ 
+    console.log(user);
 
       return (
     <ProfileInfoCard
               title="profile information"
-              info={{
-                fullName: loggedUser.userName,
-                email: loggedUser.userEmail,
-                mobile: user.mobileNo,
-                adress: user.address,
-                userId: user.idDtls,
-                userId: user.idProofType,
-              }}
+              description=""
+              info={info_data}
               social={[
                 {
                   link: "https://www.facebook.com/BalAsha/",
@@ -88,6 +105,6 @@ console.log("--------------------kalash"+JSON.stringify(loggedUser));
             />
     );
 }
-}
+// }
 
 export default ProfileInformation;

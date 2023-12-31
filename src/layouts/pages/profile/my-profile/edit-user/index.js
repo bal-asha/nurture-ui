@@ -46,6 +46,8 @@ import form from "layouts/pages/profile/my-profile/edit-user/schemas/form";
 import initialValues from "layouts/pages/profile/my-profile/edit-user/schemas/initialValues";
 import { UserContext } from "custom/UserContext";
 
+import axiosInstance from "platform/axiosConfig.js";
+
 function getSteps() {
   return ["User Info", "Address"];
 }
@@ -94,9 +96,11 @@ function NewUser() {
 
     let userDetail=values;
     userDetail ={
+      
       ...userDetail,  // Spread the previous state
       idProofType: idProofType, // Add or update properties
       userEmail: userSessionDetail.userEmail,
+      
       
       // ... Add more key-value pairs as needed
     };
@@ -105,20 +109,16 @@ function NewUser() {
     alert(JSON.stringify(userDetail, null, 2)) ;
 
     
-    const requestOptions = {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(userDetail)
-  };
-  fetch(process.env.REACT_APP_PUBLIC_URL + '/update-user', requestOptions)
-      .then(response => response.json())
-      .then(data => setUser(data));
+    const locationsUri = '/update-user';
+    axiosInstance.put(locationsUri,userDetail).then(data => {setUser(data);
+      console.log("hiiii");
+    }).catch((err) => {
+    console.error(err)
+    });
 
-    actions.setSubmitting(false);
-    actions.resetForm();
-
-    setActiveStep(0);
   };
+
+
 
   const handleSubmit = (values, actions) => {
     if (isLastStep) {
@@ -168,7 +168,7 @@ function NewUser() {
                             </SoftButton>
                           )}
                           <SoftButton
-                            disabled={isSubmitting}
+                            // disabled={isSubmitting}
                             type="submit"
                             variant="gradient"
                             color="dark"
