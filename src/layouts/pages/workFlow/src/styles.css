@@ -1,6 +1,11 @@
+html,
+body,
+#root,
+.App {
+  height: 100%;
+}
+
 .App {
   font-family: sans-serif;
-  /* text-align: center; */
-  width: 1200px;
-  height: 650px;
+  text-align: center;
 }

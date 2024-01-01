@@ -1,14 +1,19 @@
-import { StrictMode } from "react";
-import ReactDOM from "react-dom";
+import React from "react";
+import { createRoot } from "react-dom/client";
 
 import App from "./App";
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-  rootElement
-);
+const root = createRoot(rootElement);
 
-export default rootElement;
+function Workflow(){
+  root.render(
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  );
+
+}
+
+export default Workflow;
+
