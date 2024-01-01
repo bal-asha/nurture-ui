@@ -51,6 +51,7 @@ import Invoice from "layouts/pages/account/invoice";
 import Security from "layouts/pages/account/security";
 import General from "layouts/pages/projects/general";
 import Timeline from "layouts/pages/projects/timeline";
+import Workflow from "layouts/pages/workFlow/src";
 import NewProject from "layouts/pages/projects/new-project";
 import Widgets from "layouts/pages/widgets";
 import Charts from "layouts/pages/charts";
@@ -113,6 +114,12 @@ const routes = [
         key: "default",
         route: "/dashboards/default",
         component: <Default />,
+      },
+      {
+        name: "Default",
+        key: "default",
+        route: "/dashboards/workflow",
+        component: <Workflow />,
       },
       {
         name: "Automotive",
