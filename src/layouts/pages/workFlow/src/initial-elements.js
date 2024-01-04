@@ -1,6 +1,8 @@
 import React from "react";
 import { MarkerType } from "reactflow";
 
+import Abc from './closemodal';
+
 export const nodes = [
   {
     id: "1",
@@ -29,9 +31,7 @@ export const nodes = [
     id: "3",
     data: {
       label: (
-        <>
-          This one has a <strong>custom style</strong>
-        </>
+        <Abc/>
       )
     },
     position: { x: 400, y: 100 },
