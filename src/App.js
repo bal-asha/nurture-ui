@@ -127,15 +127,31 @@ export default function App() {
             return null;
         });
 
+    function loginAutomatically(emailId) {
+        const isUserAllowedUri = '/admin/allow-user/allowed?emailId=' + emailId;
+        axiosInstance.post(isUserAllowedUri)
+            .then((res) => {
+                if (res) {
+                    navigate('/dashboards/default');
+                } else {
+                    navigate('/error');
+                }
+            })
+            .catch((err) => {
+                console.error(err)
+            });
+    }
+
     useEffect(() => {
 
         auth.onAuthStateChanged(user => {
             if (user) {
                 user.getIdToken(true).then(token => {
                     axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+                    loginAutomatically(user.email);
                 })
-                setLoggedUser(user);
             }
+            setLoggedUser(user);
         })
     }, []);
     console.log(loggedUser);
