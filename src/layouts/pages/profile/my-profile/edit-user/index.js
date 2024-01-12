@@ -99,18 +99,27 @@ function NewUser() {
       
       ...userDetail,  // Spread the previous state
       idProofType: idProofType, // Add or update properties
-      userEmail: userSessionDetail.userEmail,
-      
-      
-      // ... Add more key-value pairs as needed
+      userEmail: userSessionDetail.userEmail
     };
-
+    let userDetaill ={     
+      userName:userDetail.userName,
+      mobileNo:userDetail.mobileNo,
+      idDtls:userDetail.idDtls,
+      address:{
+        address1:userDetail.address1,
+        address2:userDetail.address2,
+        city:userDetail.city,
+        zip:userDetail.zip
+      },  
+      idProofType: idProofType, // Add or update properties
+      userEmail: userSessionDetail.userEmail
+    };
     // eslint-disable-next-line no-alert
-    alert(JSON.stringify(userDetail, null, 2)) ;
+    alert(JSON.stringify(userDetaill, null, 2)) ;
 
     
     const locationsUri = '/update-user';
-    axiosInstance.put(locationsUri,userDetail).then(data => {setUser(data);
+    axiosInstance.put(locationsUri,userDetaill).then(data => {setUser(data);
       console.log("hiiii");
     }).catch((err) => {
     console.error(err)

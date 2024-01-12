@@ -154,7 +154,7 @@ export default function App() {
             setLoggedUser(user);
         })
     }, []);
-    console.log(loggedUser);
+
     
     // Setting the dir attribute for the body element
 
