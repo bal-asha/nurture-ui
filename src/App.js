@@ -67,6 +67,7 @@ import Widgets from "./layouts/pages/widgets";
 import LoginScreen from "./custom/LoginScreen";
 import axiosInstance, {setupResponseInterceptor} from "./platform/axiosConfig";
 import UnAuthorizedUser from "./layouts/default/error";
+import { UserContext } from "custom/UserContext";
 
 export default function App() {
     const [controller, dispatch] = useSoftUIController();
@@ -76,7 +77,6 @@ export default function App() {
     const {pathname} = useLocation();
     const [loggedUser, setLoggedUser] = useState(null);
     const [responseInterceptor, setResponseInterceptor] = useState(false)
-
     const [user] = useAuthState(auth);
 
     //Setup the Response Interceptor globally for once
@@ -154,7 +154,8 @@ export default function App() {
             setLoggedUser(user);
         })
     }, []);
-    console.log(loggedUser);
+
+    
     // Setting the dir attribute for the body element
 
     useEffect(() => {
@@ -242,11 +243,13 @@ export default function App() {
                     </>
                 )}
                 {layout === "vr" && <Configurator/>}
+                <UserContext.Provider value={{"userName":loggedUser.displayName,"userEmail":loggedUser.email}}>
                 <Routes>
                     {getRoutes(routes)}
                     <Route path="*" element={<Navigate to="/dashboards/default"/>}/>
                     <Route path="/error" element={<UnAuthorizedUser/>}/>
                 </Routes>
+                </UserContext.Provider>
             </ThemeProvider>
         );
     }

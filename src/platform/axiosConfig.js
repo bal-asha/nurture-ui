@@ -5,7 +5,8 @@ const axiosInstance = axios.create({
     baseURL: 'http://localhost:8080', // Set your default base URL here
     timeout: 20000, // Set a timeout (optional)
     headers: {
-        'Access-Control-Allow-Origin': '*'
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json'
     }
 
 });

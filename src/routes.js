@@ -41,6 +41,8 @@ import VRDefault from "layouts/dashboards/virtual-reality/vr-default";
 import VRInfo from "layouts/dashboards/virtual-reality/vr-info";
 import CRM from "layouts/dashboards/crm";
 import ProfileOverview from "layouts/pages/profile/profile-overview";
+import MyProfile from "layouts/pages/profile/my-profile";
+import EditUser from "layouts/pages/profile/my-profile/edit-user";
 import Teams from "layouts/pages/profile/teams";
 import AllProjects from "layouts/pages/profile/all-projects";
 import Reports from "layouts/pages/users/reports";
@@ -186,6 +188,12 @@ const routes = [
             component: <ProfileOverview />,
           },
           {
+            name: "My Profile",
+            key: "my-profile",
+            route: "/pages/profile/my-profile",
+            component: <MyProfile/>,
+          },
+          {
             name: "Teams",
             key: "teams",
             route: "/pages/profile/teams",
@@ -196,7 +204,7 @@ const routes = [
             key: "all-projects",
             route: "/pages/profile/all-projects",
             component: <AllProjects />,
-          },
+          }
         ],
       },
       {
@@ -215,6 +223,12 @@ const routes = [
             route: "/pages/users/new-user",
             component: <NewUser />,
           },
+          {
+            name: "Edit User",
+            key: "edit-user",
+            route: "/pages/users/edit-user",
+            component: <EditUser />,
+          }
         ],
       },
       {

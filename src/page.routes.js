@@ -85,6 +85,11 @@ const pageRoutes = [
         key: "new-user",
         route: "/pages/users/new-user",
       },
+      {
+        name: "Edit User",
+        key: "edit-user",
+        route: "/pages/users/edit-user",
+      }
     ],
   },
   {
@@ -96,6 +101,11 @@ const pageRoutes = [
         name: "Profile Overview",
         key: "profile-overview",
         route: "/pages/profile/profile-overview",
+      },
+      {
+        name: "My Profile",
+        key: "my-profile",
+        route: "/pages/profile/my-profile",
       },
       {
         name: "Teams",
