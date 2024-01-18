@@ -11,7 +11,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // prop-type is a library for typechecking of props
 import PropTypes from "prop-types";
@@ -26,11 +26,13 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftInput from "components/SoftInput";
 
+
+import {stateList} from "layouts/pages/profile/my-profile/edit-user/schemas/initialValues";
 // NewUser page components
 import FormField from "layouts/pages/profile/my-profile/edit-user/components/FormField";
 
-function Address({ formData ,updateAdressDetail}) {
-  const [state, setState] = useState("...");
+function Address({ formData ,updateAdressDetail,userDetail,initialState}) {
+  const [state, setState] = useState(initialState);
   const { formField, values, errors, touched } = formData;
   const { address1, address2, city, zip } = formField;
   const { address1: address1V, address2: address2V, city: cityV, zip: zipV } = values;
@@ -39,6 +41,36 @@ function Address({ formData ,updateAdressDetail}) {
     setState(event.target.value);
     updateAdressDetail(event.target.value);
   }
+ 
+  // useEffect(()=>{
+  //   console.log(userDetail);
+  //    userDetail.data.address.address1;
+  //   // values={
+  //   //   address1: userDetail.data.address.address1,
+  //   //   address2: userDetail.data.address.address2,
+  //   //   city: userDetail.data.address.city,
+  //   //   zip: userDetail.data.address.zip,
+
+  //   // }
+  // },[]
+  // );
+
+  // useEffect(() => {
+  //   // Check if userDetail exists and has the required address properties
+  //   if (userDetail && userDetail.data && userDetail.data.address) {
+  //     // Destructure the address properties from userDetail.data.address
+  //     const { address1, address2, city, zip } = userDetail.data.address;
+  
+  //     // Update the values state with the initial address values
+  //     setValues({
+  //       address1: address1 || '',
+  //       address2: address2 || '',
+  //       city: city || '',
+  //       zip: zip || ''
+  //     });
+  //   }
+  // }, [userDetail]); 
+
 
   return (
     <SoftBox>
@@ -93,11 +125,12 @@ function Address({ formData ,updateAdressDetail}) {
                 State
               </SoftTypography>
             </SoftBox>
-            <Select input={<SoftInput />} value={state} onChange={handleSetState}>
-              <MenuItem value="...">...</MenuItem>
-              <MenuItem value="10">Hello 10</MenuItem>
-              <MenuItem value="11">Hello 11</MenuItem>
-              <MenuItem value="12">Hello 12</MenuItem>
+            <Select input={<SoftInput />} MenuProps={{style:{maxHeight:'300px'}}} value={state} onChange={handleSetState} placeholder="Select State" >
+              {
+              stateList.map((state) => (
+              <MenuItem key={state} value={state} >{state}</MenuItem>
+              ))
+            }
             </Select>
           </Grid>
           <Grid item xs={6} sm={3}>
@@ -120,7 +153,9 @@ function Address({ formData ,updateAdressDetail}) {
 // typechecking props for Address
 Address.propTypes = {
   formData: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
-  updateAdressDetail: PropTypes.any
+  updateAdressDetail: PropTypes.any,
+  userDetail:PropTypes.object,
+  initialState:PropTypes.string
 };
 
 export default Address;

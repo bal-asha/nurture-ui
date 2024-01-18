@@ -11,6 +11,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useEffect, useState } from "react";
 // @mui material components
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
@@ -31,9 +32,15 @@ import PlaceholderCard from "examples/Cards/PlaceholderCard";
 import Header from "layouts/pages/profile/components/Header";
 import PlatformSettings from "layouts/pages/profile/profile-overview/components/PlatformSettings";
 import ProfileInformation from "layouts/pages/profile/my-profile/ProfileInformation";
+import AddressInformation from "layouts/pages/profile/my-profile/AddressInformation";
 import EditUser from "layouts/pages/profile/my-profile/edit-user";
 // Data
 import profilesListData from "layouts/pages/profile/profile-overview/data/profilesListData";
+
+import { UserContext } from "custom/UserContext";
+import React, { useContext } from 'react';
+import ProfileInfoCard from "examples/Cards/InfoCards/ProfileInfoCard";
+import axiosInstance from "platform/axiosConfig.js";
 
 // Images
 import homeDecor1 from "assets/images/home-decor-1.jpg";
@@ -45,18 +52,48 @@ import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
 function ProfileOverview() {
+
+
+  const [infoData,setInfoData]=useState(null);
+  const loggedUser = useContext(UserContext);
+  useEffect(()=>{
+    axiosInstance.get('/get-users').then(data => {    
+    console.log(data);
+    if(data.data.length!==0){
+      setInfoData({
+        fullName: loggedUser.userName,
+        email: loggedUser.userEmail,      
+        mobile: data.data.mobileNo,
+        address1: data.data.address.address1,
+        address2:data.data.address.address2,
+        city: data.data.address.city,
+        zip:data.data.address.zip,
+        state:"",
+        IDProofType: data.data.idProofType,
+        IDNumber: data.data.idDtls,     
+      }); 
+    }
+   
+  }).catch((err) => {
+  console.error(err)
+  });
+
+},[]);
+
   return (
     <DashboardLayout>
       <Header />
       <SoftBox mt={5} mb={3}>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={4} xl={4}>
-            <ProfileInformation />
+        { infoData!=null ? (
+          <Grid container spacing={3}>
+            <Grid item xs={12} md={6} xl={6}>     
+            <ProfileInformation user={infoData}/> 
           </Grid>
-          {/* <Grid item xs={12} md={8} xl={8}>
-          <NewUser />
-          </Grid> */}
-        </Grid>
+          <Grid item xs={12} md={6} xl={6}>
+            <AddressInformation user={infoData}/>
+          </Grid> </Grid>) : (null)
+        }
+        
       </SoftBox>
       <SoftBox mb={3}>
         <Card>

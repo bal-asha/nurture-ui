@@ -23,14 +23,14 @@ const form = {
     },
     idDtls:{
       name: "idDtls",
-      label: "Id No.",
+      label: "ID Number",
       type: "text",
       placeholder: "eg. XXXX XXXX XXXX",
       errorMsg: "ID details are required.",
     },
     mobileNo:{
       name: "mobileNo",
-      label: "Mobile No",
+      label: "Mobile Number",
       type: "text",
       placeholder: "eg. Micheal",
       errorMsg: "First name is required.",

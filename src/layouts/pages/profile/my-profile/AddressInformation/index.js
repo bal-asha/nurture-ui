@@ -29,33 +29,30 @@ import { UserContext } from "custom/UserContext";
 import React, { useContext } from 'react';
 import ProfileInfoCardCustome from "examples/Cards/InfoCards/ProfileInfoCardCustome";
 import axiosInstance from "platform/axiosConfig.js";
-import PropTypes from "prop-types";
 
-function ProfileInformation({user}) {
+import PropTypes from "prop-types";
+function AddressInformation({user}) {
   const loggedUser = useContext(UserContext);
   const [info_data,setInfoData]=useState({
-          fullName: loggedUser.userName,
-          email: loggedUser.userEmail,
-          mobile: user.mobile || '',
-          IDProofType: user.IDProofType || '',
-          IDNumber: user.IDNumber || '',    
+            address: user.address1+ " "+ user.address2 || '',
+            city: user.city || '',
+            zip:user.zip || '',
+            state:"hiiii",
          });
 
       return (
     <ProfileInfoCardCustome
-              title="profile information"
+              title="address information"
               info={info_data}
               action={{ route: "/pages/users/edit-user", tooltip: "Edit Profile" }}
               
             />
     );
 }
+// }
+AddressInformation.propTypes = {
 
-ProfileInformation.propTypes = {
-
-  user:PropTypes.any
-
- 
-};
-
-export default ProfileInformation;
+    user:PropTypes.any
+   
+  };
+export default AddressInformation;

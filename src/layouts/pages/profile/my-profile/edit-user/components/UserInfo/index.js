@@ -27,16 +27,16 @@ import SoftInput from "components/SoftInput";
 
 // NewUser page components
 import FormField from "layouts/pages/profile/my-profile/edit-user/components/FormField";
+import {idProofTypeList} from "layouts/pages/profile/my-profile/edit-user/schemas/initialValues";
+
 import { useState ,useContext} from "react";
 
-function UserInfo({ formData, updateUserInfoDetail}) {
+function UserInfo({ formData, updateUserInfoDetail,userDetail,initialValidProofType}) {
 
-  let [idProofType,setIdProofType]=useState("Adhar");
+  let [idProofType,setIdProofType]=useState(initialValidProofType);
  
   const { formField, values, errors, touched } = formData;
-  const { userName, 
-    idDtls,
-    mobileNo,} = formField;
+  const { userName,idDtls,mobileNo,} = formField;
   const {
     userName: userNameV,
     idDtls:idDtlsV,
@@ -93,14 +93,14 @@ function UserInfo({ formData, updateUserInfoDetail}) {
                 fontWeight="bold"
                 textTransform="capitalize"
               >
-                idProofType
+                ID Proof Type
               </SoftTypography>
             </SoftBox>
             <Select input={<SoftInput />} value={idProofType} onChange={handleSetState}>
-              <MenuItem value="Adhar">Adhar</MenuItem>
-              <MenuItem value="Pan Card">Pan Card</MenuItem>
-              <MenuItem value="Voter Id Card">Voter Id Card</MenuItem>
-              <MenuItem value="Driving License">Driving License</MenuItem>
+              {
+                idProofTypeList.map((type)=>(<MenuItem key={type} value={type}>{type}</MenuItem>))
+              }
+              
             </Select>
           </Grid>
           <Grid item xs={12} sm={6}>
@@ -122,7 +122,9 @@ function UserInfo({ formData, updateUserInfoDetail}) {
 // typechecking props for UserInfo
 UserInfo.propTypes = {
   formData: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
-  updateUserInfoDetail: PropTypes.any
+  updateUserInfoDetail: PropTypes.any,
+  userDetail:PropTypes.object,
+  initialValidProofType: PropTypes.string
 };
 
 export default UserInfo;

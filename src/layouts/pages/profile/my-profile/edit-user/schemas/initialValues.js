@@ -13,6 +13,7 @@
 
 import checkout from "layouts/pages/profile/my-profile/edit-user/schemas/form";
 
+
 const {
   formField: {
     userName, 
@@ -38,7 +39,8 @@ const {
   },
 } = checkout;
 
-const initialValues = {
+
+export const initialValues = {
   [userName.name]:"",
   [idDtls.name]:"",
   [mobileNo.name]:"",
@@ -59,4 +61,45 @@ const initialValues = {
   // [bio.name]: "",
 };
 
-export default initialValues;
+
+export const stateList=[
+"Andhra Pradesh",
+"Arunachal Pradesh",
+"Assam",
+"Bihar",
+"Chhattisgarh",
+"Goa",
+"Gujarat",
+"Haryana",
+"Himachal Pradesh",
+"Jammu and Kashmir",
+"Jharkhand",
+"Karnataka",
+"Kerala",
+"Madhya Pradesh",
+"Maharashtra",
+"Manipur",
+"Meghalaya",
+"Mizoram",
+"Nagaland",
+"Odisha",
+"Punjab",
+"Rajasthan",
+"Sikkim",
+"Tamil Nadu",
+"Telangana",
+"Tripura",
+"Uttarakhand",
+"Uttar Pradesh",
+"West Bengal",
+"Andaman and Nicobar Islands",
+"Chandigarh",
+"Dadra and Nagar Haveli",
+"Daman and Diu",
+"Delhi",
+"Lakshadweep",
+"Puducherry"];
+
+
+export const idProofTypeList=["Adhaar","PAN Card","Voter ID Card","Driving License"]
+
