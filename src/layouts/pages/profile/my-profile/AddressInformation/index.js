@@ -36,8 +36,9 @@ function AddressInformation({user}) {
   const [info_data,setInfoData]=useState({
             address: user.address1+ " "+ user.address2 || '',
             city: user.city || '',
+            state:user.state || '',
             zip:user.zip || '',
-            state:"hiiii",
+           
          });
 
       return (

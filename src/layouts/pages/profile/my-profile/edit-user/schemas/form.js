@@ -21,6 +21,13 @@ const form = {
       placeholder: "eg. Micheal",
       errorMsg: "First name is required.",
     },
+    idProofType:{
+      name: "idProofType",
+      label: "ID Proof Type",
+      type: "text",
+      placeholder: "eg. Adhar",
+      errorMsg: "ID Proof Type details are required.",
+    },
     idDtls:{
       name: "idDtls",
       label: "ID Number",
@@ -54,6 +61,13 @@ const form = {
       type: "text",
       placeholder: "eg. Tokyo",
       errorMsg: "City is required.",
+    },
+    state: {
+      name: "state",
+      label: "state",
+      type: "text",
+      placeholder: "eg. Maharashtra",
+      errorMsg: "State is required.",
     },
     zip: {
       name: "zip",

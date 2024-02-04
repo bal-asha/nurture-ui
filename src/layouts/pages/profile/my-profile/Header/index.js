@@ -35,12 +35,13 @@ import Settings from "examples/Icons/Settings";
 
 // BalAsha - Nurture base styles
 import breakpoints from "assets/theme/base/breakpoints";
+import PropTypes from "prop-types";
 
 // Images
 import burceMars from "assets/images/bruce-mars.jpg";
 import curved0 from "assets/images/curved-images/curved0.jpg";
 
-function Header() {
+function Header({user}) {
   const [tabsOrientation, setTabsOrientation] = useState("horizontal");
   const [tabValue, setTabValue] = useState(0);
 
@@ -111,7 +112,7 @@ function Header() {
           <Grid item>
             <SoftBox height="100%" mt={0.5} lineHeight={1}>
               <SoftTypography variant="h5" fontWeight="medium">
-                Alex Thompson
+                {user.userName}
               </SoftTypography>
               {/* <SoftTypography variant="button" color="text" fontWeight="medium">
                 CEO / Co-Founder
@@ -138,4 +139,9 @@ function Header() {
   );
 }
 
+Header.propTypes = {
+
+  user:PropTypes.any
+ 
+};
 export default Header;

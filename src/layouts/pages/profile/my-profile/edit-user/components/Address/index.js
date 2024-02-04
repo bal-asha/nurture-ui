@@ -31,45 +31,10 @@ import {stateList} from "layouts/pages/profile/my-profile/edit-user/schemas/init
 // NewUser page components
 import FormField from "layouts/pages/profile/my-profile/edit-user/components/FormField";
 
-function Address({ formData ,updateAdressDetail,userDetail,initialState}) {
-  const [state, setState] = useState(initialState);
-  const { formField, values, errors, touched } = formData;
-  const { address1, address2, city, zip } = formField;
-  const { address1: address1V, address2: address2V, city: cityV, zip: zipV } = values;
-
-  const handleSetState = (event) => {
-    setState(event.target.value);
-    updateAdressDetail(event.target.value);
-  }
- 
-  // useEffect(()=>{
-  //   console.log(userDetail);
-  //    userDetail.data.address.address1;
-  //   // values={
-  //   //   address1: userDetail.data.address.address1,
-  //   //   address2: userDetail.data.address.address2,
-  //   //   city: userDetail.data.address.city,
-  //   //   zip: userDetail.data.address.zip,
-
-  //   // }
-  // },[]
-  // );
-
-  // useEffect(() => {
-  //   // Check if userDetail exists and has the required address properties
-  //   if (userDetail && userDetail.data && userDetail.data.address) {
-  //     // Destructure the address properties from userDetail.data.address
-  //     const { address1, address2, city, zip } = userDetail.data.address;
-  
-  //     // Update the values state with the initial address values
-  //     setValues({
-  //       address1: address1 || '',
-  //       address2: address2 || '',
-  //       city: city || '',
-  //       zip: zip || ''
-  //     });
-  //   }
-  // }, [userDetail]); 
+function Address({ formData }) {
+  const { formField, values, errors, touched ,handleChange} = formData;
+  const { address1, address2, city,state, zip } = formField;
+  const { address1: address1V, address2: address2V, city: cityV, state:stateV,zip: zipV } = values;
 
 
   return (
@@ -125,7 +90,7 @@ function Address({ formData ,updateAdressDetail,userDetail,initialState}) {
                 State
               </SoftTypography>
             </SoftBox>
-            <Select input={<SoftInput />} MenuProps={{style:{maxHeight:'300px'}}} value={state} onChange={handleSetState} placeholder="Select State" >
+            <Select input={<SoftInput />} name={state.name} MenuProps={{style:{maxHeight:'300px'}}} value={stateV} onChange={handleChange} placeholder="Select State" >
               {
               stateList.map((state) => (
               <MenuItem key={state} value={state} >{state}</MenuItem>
@@ -153,9 +118,6 @@ function Address({ formData ,updateAdressDetail,userDetail,initialState}) {
 // typechecking props for Address
 Address.propTypes = {
   formData: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
-  updateAdressDetail: PropTypes.any,
-  userDetail:PropTypes.object,
-  initialState:PropTypes.string
 };
 
 export default Address;

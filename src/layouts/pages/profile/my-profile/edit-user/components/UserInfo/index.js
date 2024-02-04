@@ -31,23 +31,24 @@ import {idProofTypeList} from "layouts/pages/profile/my-profile/edit-user/schema
 
 import { useState ,useContext} from "react";
 
-function UserInfo({ formData, updateUserInfoDetail,userDetail,initialValidProofType}) {
+function UserInfo({ formData}) {
 
-  let [idProofType,setIdProofType]=useState(initialValidProofType);
+  // let [idProofType,setIdProofType]=useState(initialValidProofType);
  
-  const { formField, values, errors, touched } = formData;
-  const { userName,idDtls,mobileNo,} = formField;
+  const { formField, values, errors, touched,handleChange } = formData;
+  const { userName,idProofType,idDtls,mobileNo,} = formField;
   const {
     userName: userNameV,
     idDtls:idDtlsV,
     mobileNo:mobileNoV,
+    idProofType:idProofTypeV
   } = values;
 
-  const handleSetState = (event) => {
-    setIdProofType(event.target.value);
-    updateUserInfoDetail(event.target.value);
+  // const handleSetState = (event) => {
+  //   setIdProofType(event.target.value);
+  //   updateUserInfoDetail(event.target.value);
 
-    }
+  //   }
 
   return (
     <SoftBox>
@@ -96,7 +97,7 @@ function UserInfo({ formData, updateUserInfoDetail,userDetail,initialValidProofT
                 ID Proof Type
               </SoftTypography>
             </SoftBox>
-            <Select input={<SoftInput />} value={idProofType} onChange={handleSetState}>
+            <Select input={<SoftInput />} name={idProofType.name} value={idProofTypeV} onChange={handleChange}>
               {
                 idProofTypeList.map((type)=>(<MenuItem key={type} value={type}>{type}</MenuItem>))
               }
@@ -110,6 +111,8 @@ function UserInfo({ formData, updateUserInfoDetail,userDetail,initialValidProofT
               name={idDtls.name}
               value={idDtlsV}
               placeholder={idDtls.placeholder}
+              error={errors.idDtls && touched.idDtls}
+              success={idDtls.length > 0 && !errors.idDtls}
             />
           </Grid>
         </Grid>
@@ -122,9 +125,6 @@ function UserInfo({ formData, updateUserInfoDetail,userDetail,initialValidProofT
 // typechecking props for UserInfo
 UserInfo.propTypes = {
   formData: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
-  updateUserInfoDetail: PropTypes.any,
-  userDetail:PropTypes.object,
-  initialValidProofType: PropTypes.string
 };
 
 export default UserInfo;

@@ -29,7 +29,7 @@ import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
 import PlaceholderCard from "examples/Cards/PlaceholderCard";
 
 // Overview page components
-import Header from "layouts/pages/profile/components/Header";
+import Header from "layouts/pages/profile/my-profile/Header";
 import PlatformSettings from "layouts/pages/profile/profile-overview/components/PlatformSettings";
 import ProfileInformation from "layouts/pages/profile/my-profile/ProfileInformation";
 import AddressInformation from "layouts/pages/profile/my-profile/AddressInformation";
@@ -68,7 +68,7 @@ function ProfileOverview() {
         address2:data.data.address.address2,
         city: data.data.address.city,
         zip:data.data.address.zip,
-        state:"",
+        state:data.data.address.state,
         IDProofType: data.data.idProofType,
         IDNumber: data.data.idDtls,     
       }); 
@@ -82,7 +82,7 @@ function ProfileOverview() {
 
   return (
     <DashboardLayout>
-      <Header />
+      <Header user={loggedUser}/>
       <SoftBox mt={5} mb={3}>
         { infoData!=null ? (
           <Grid container spacing={3}>

@@ -17,48 +17,32 @@ import checkout from "layouts/pages/profile/my-profile/edit-user/schemas/form";
 const {
   formField: {
     userName, 
+    idProofType,
     idDtls,
     mobileNo,
     address1,
     address2,
     city,
+    state,
     zip,
     userEmail
-    // firstName,
-    // lastName,
-    // company,
-    // email,
-    // password,
-    // repeatPassword,
 
-    // twitter,
-    // facebook,
-    // instagram,
-    // publicEmail,
-    // bio,
   },
 } = checkout;
 
 
 export const initialValues = {
   [userName.name]:"",
+  [idProofType.name]:"Adhaar",
   [idDtls.name]:"",
   [mobileNo.name]:"",
   [address1.name]: "",
   [address2.name]: "",
   [city.name]: "",
+  [state.name]: "Andhra Pradesh",
   [zip.name]: "",
   [userEmail.name]: "",
-  // [firstName.name]: "",
-  // [lastName.name]: "",
-  // [company.name]: "",
-  // [password.name]: "",
-  // [repeatPassword.name]: "",
-  // [twitter.name]: "",
-  // [facebook.name]: "",
-  // [instagram.name]: "",
-  // [publicEmail.name]: "",
-  // [bio.name]: "",
+
 };
 
 
@@ -102,4 +86,3 @@ export const stateList=[
 
 
 export const idProofTypeList=["Adhaar","PAN Card","Voter ID Card","Driving License"]
-

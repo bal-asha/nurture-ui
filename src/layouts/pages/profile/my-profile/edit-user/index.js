@@ -38,7 +38,7 @@ import UserInfo from "layouts/pages/profile/my-profile/edit-user/components/User
 import Address from "layouts/pages/profile/my-profile/edit-user/components/Address";
 import Socials from "layouts/pages/profile/my-profile/edit-user/components/Socials";
 import Profile from "layouts/pages/profile/my-profile/edit-user/components/Profile";
-import Header from "layouts/pages/profile/components/Header";
+import Header from "layouts/pages/profile/my-profile/Header";
 
 // NewUser layout schemas for form and form feilds
 import validations from "layouts/pages/profile/my-profile/edit-user/schemas/validations";
@@ -52,12 +52,12 @@ function getSteps() {
   return ["User Info", "Address"];
 }
 
-function getStepContent(stepIndex, formData,updateUserInfoDetail,updateAdressDetail,user,initialState,initialValidProofType) {
+function getStepContent(stepIndex, formData) {
   switch (stepIndex) {
     case 0:
-      return <><UserInfo formData={formData} updateUserInfoDetail={updateUserInfoDetail} userDetail={user} initialValidProofType={initialValidProofType}/> </>;
+      return <><UserInfo formData={formData}  /> </>;
     case 1:
-      return <Address formData={formData} updateAdressDetail={updateAdressDetail} userDetail={user} initialState={initialState}/>;
+      return <Address formData={formData}/>;
     default:
       return null;
   }
@@ -74,21 +74,23 @@ function NewUser() {
   const isLastStep = activeStep === steps.length - 1;
   const [data,setData]=useState("");
   const [user,setUser]=useState(null);
-  const [idProofType,setIdProofType]=useState("Adhar");
-  const [state,setState]=useState(null);
-  const [initialValidProofType,setinitialValidProofType]=useState(null);
-  const [initialState,setinitialState]=useState(null);
+
+  // const [state,setState]=useState(null);
+
+  // const [initialState,setinitialState]=useState(null);
   const route_to_home= useNavigate();
   
   const userSessionDetail=useContext(UserContext);
   const {
     formField: {
-      userName, 
+      userName,
+      idProofType, 
       idDtls,
       mobileNo,
       address1,
       address2,
       city,
+      state,
       zip,
       userEmail
 
@@ -97,12 +99,15 @@ function NewUser() {
   
   const [initialValuess,setIitialValues]= useState({
     [userName.name]:null,
+    [idProofType.name]: null,
     [idDtls.name]:null,
     [mobileNo.name]:null,
     [address1.name]: null,
     [address2.name]: null,
     [city.name]: null,
+    [state.name]: null,
     [zip.name]: null,
+
 });
 
 
@@ -114,32 +119,31 @@ function NewUser() {
           console.log(data);
           setIitialValues({
             [userName.name]:data.data.userName,
+            [idProofType.name]: data.data.idProofType,
             [idDtls.name]:data.data.idDtls,
             [mobileNo.name]:data.data.mobileNo,
             [address1.name]: data.data.address.address1,
             [address2.name]: data.data.address.address2,
             [city.name]: data.data.address.city,
+            [state.name]: data.data.address.state,
             [zip.name]: data.data.address.zip,
 
 
         });
-        setinitialState("");
-        setinitialValidProofType(data.data.idProofType);
+
 
       }else{
         setIitialValues({
           [userName.name]:"",
+          [idProofType.name]:"Adhaar",
           [idDtls.name]:"",
           [mobileNo.name]:"",
           [address1.name]: "",
           [address2.name]: "",
           [city.name]: "",
+          [state.name]: "Andhra Pradesh",
           [zip.name]: "",
-
-
           });
-      setinitialState("Andhra Pradesh");
-      setinitialValidProofType("Adhaar");
 
       }
       console.log(initialValuess);
@@ -148,13 +152,6 @@ function NewUser() {
     })
 
   },[]);
-
-  const updateUserInfoDetail =(idProofType_)=>{
-    setIdProofType(idProofType_);
-  }
-  const updateAdressDetail= (state_)=>{
-   setState(state_);
-  }
 
   const sleep = (ms) =>
     new Promise((resolve) => {
@@ -171,7 +168,7 @@ function NewUser() {
     userDetail ={
       
       ...userDetail,  // Spread the previous state
-      idProofType: idProofType, // Add or update properties
+      // idProofType: idProofType, // Add or update properties
       userEmail: userSessionDetail.userEmail
     };
     let userDetaill ={     
@@ -182,9 +179,10 @@ function NewUser() {
         address1:userDetail.address1,
         address2:userDetail.address2,
         city:userDetail.city,
+        state:userDetail.state,
         zip:userDetail.zip
       },  
-      idProofType: idProofType, // Add or update properties
+      idProofType: userDetail.idProofType, // Add or update properties
       userEmail: userSessionDetail.userEmail
     };
     // eslint-disable-next-line no-alert
@@ -216,7 +214,7 @@ function NewUser() {
 
   return (
     <DashboardLayout>
-      <Header />
+      <Header user={userSessionDetail}/>
       <SoftBox py={3} mb={20}>
         <Grid container justifyContent="center" sx={{ height: "100%" }}>
           <Grid item xs={12} lg={8}>
@@ -227,13 +225,13 @@ function NewUser() {
                 </Step>
               ))}
             </Stepper>
-            { (initialValuess.userName !== null && initialState!==null && initialValidProofType !=null)? (
+            { (initialValuess.userName !== null)? (
             <Formik
             initialValues={initialValuess}
               validationSchema={currentValidation}
               onSubmit={handleSubmit}
             >
-              {({ values, errors, touched, isSubmitting }) => (
+              {({ values, errors, touched, handleChange,isSubmitting }) => (
                 <Form id={formId} autoComplete="off">
                   <Card sx={{ height: "100%" }}>
                     <SoftBox p={2}>
@@ -243,7 +241,8 @@ function NewUser() {
                           touched,
                           formField,
                           errors,
-                        },updateUserInfoDetail,updateAdressDetail,user,initialState,initialValidProofType)}
+                          handleChange
+                        })}
                         <SoftBox mt={2} width="100%" display="flex" justifyContent="space-between">
                           {activeStep === 0 ? (
                             <SoftBox />
