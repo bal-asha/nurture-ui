@@ -58,11 +58,10 @@ function ProfileOverview() {
   const loggedUser = useContext(UserContext);
   useEffect(()=>{
     axiosInstance.get('/get-users').then(data => {    
-    console.log(data);
     if(data.data.length!==0){
       setInfoData({
-        fullName: loggedUser.userName,
-        email: loggedUser.userEmail,      
+        fullName: loggedUser.userName || data.data.userName,
+        email: loggedUser.userEmail || data.data.userEmail,      
         mobile: data.data.mobileNo,
         address1: data.data.address.address1,
         address2:data.data.address.address2,

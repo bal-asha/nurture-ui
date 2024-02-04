@@ -114,9 +114,9 @@ function NewUser() {
   useEffect(()=>{
     axiosInstance.get('/get-users').then(data => {
       setUser(data);
-        console.log(data.data.length);
+    
         if(data.data.length!==0){
-          console.log(data);
+     
           setIitialValues({
             [userName.name]:data.data.userName,
             [idProofType.name]: data.data.idProofType,
@@ -146,7 +146,7 @@ function NewUser() {
           });
 
       }
-      console.log(initialValuess);
+
     }).catch((err) => {
     console.error(err)
     })
@@ -168,7 +168,7 @@ function NewUser() {
     userDetail ={
       
       ...userDetail,  // Spread the previous state
-      // idProofType: idProofType, // Add or update properties
+  
       userEmail: userSessionDetail.userEmail
     };
     let userDetaill ={     
@@ -227,7 +227,7 @@ function NewUser() {
             </Stepper>
             { (initialValuess.userName !== null)? (
             <Formik
-            initialValues={initialValuess}
+              initialValues={initialValuess}
               validationSchema={currentValidation}
               onSubmit={handleSubmit}
             >
@@ -266,7 +266,7 @@ function NewUser() {
                 </Form>
               )}
             </Formik>
-            ) :( console.log("NULL")) }
+            ) :( "") }
           </Grid>
         </Grid>
       </SoftBox>

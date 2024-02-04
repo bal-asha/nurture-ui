@@ -111,8 +111,8 @@ function Header({user}) {
           </Grid>
           <Grid item>
             <SoftBox height="100%" mt={0.5} lineHeight={1}>
-              <SoftTypography variant="h5" fontWeight="medium">
-                {user.userName}
+              <SoftTypography variant="h5" fontWeight="medium">      
+                {(user.length !== 0)? (user.userName) : ("") }
               </SoftTypography>
               {/* <SoftTypography variant="button" color="text" fontWeight="medium">
                 CEO / Co-Founder

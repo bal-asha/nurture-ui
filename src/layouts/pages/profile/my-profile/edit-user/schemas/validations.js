@@ -11,9 +11,7 @@ const validations = [
     [userName.name]: Yup.string().required(userName.errorMsg),
     [mobileNo.name]: Yup.string().required(mobileNo.errorMsg).matches(/^[0-9]{10}$/, 'Invalid mobile number'),
     [idProofType.name]: Yup.string().required(idProofType.errorMsg),
-    // idDtls.name]:Yup.string().required(idProofType.errorMsg),
     [idDtls.name]: Yup.string().when(idProofType.name, (idProofTypee, schema) => {
-      console.log(idProofTypee[0]);
       switch (idProofTypee[0]) {
         case 'Adhaar':
           return schema.required(idDtls.errorMsg).matches(/^[2-9]{1}[0-9]{3}[0-9]{4}[0-9]{4}$/, 'Invalid Adhaar Number');
