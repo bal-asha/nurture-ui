@@ -11,7 +11,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // prop-type is a library for typechecking of props
 import PropTypes from "prop-types";
@@ -26,19 +26,16 @@ import SoftBox from "components/SoftBox";
 import SoftTypography from "components/SoftTypography";
 import SoftInput from "components/SoftInput";
 
+
+import {stateList} from "layouts/pages/profile/my-profile/edit-user/schemas/initialValues";
 // NewUser page components
 import FormField from "layouts/pages/profile/my-profile/edit-user/components/FormField";
 
-function Address({ formData ,updateAdressDetail}) {
-  const [state, setState] = useState("...");
-  const { formField, values, errors, touched } = formData;
-  const { address1, address2, city, zip } = formField;
-  const { address1: address1V, address2: address2V, city: cityV, zip: zipV } = values;
+function Address({ formData }) {
+  const { formField, values, errors, touched ,handleChange} = formData;
+  const { address1, address2, city,state, zip } = formField;
+  const { address1: address1V, address2: address2V, city: cityV, state:stateV,zip: zipV } = values;
 
-  const handleSetState = (event) => {
-    setState(event.target.value);
-    updateAdressDetail(event.target.value);
-  }
 
   return (
     <SoftBox>
@@ -93,11 +90,12 @@ function Address({ formData ,updateAdressDetail}) {
                 State
               </SoftTypography>
             </SoftBox>
-            <Select input={<SoftInput />} value={state} onChange={handleSetState}>
-              <MenuItem value="...">...</MenuItem>
-              <MenuItem value="10">Hello 10</MenuItem>
-              <MenuItem value="11">Hello 11</MenuItem>
-              <MenuItem value="12">Hello 12</MenuItem>
+            <Select input={<SoftInput />} name={state.name} MenuProps={{style:{maxHeight:'300px'}}} value={stateV} onChange={handleChange} placeholder="Select State" >
+              {
+              stateList.map((state) => (
+              <MenuItem key={state} value={state} >{state}</MenuItem>
+              ))
+            }
             </Select>
           </Grid>
           <Grid item xs={6} sm={3}>
@@ -120,7 +118,6 @@ function Address({ formData ,updateAdressDetail}) {
 // typechecking props for Address
 Address.propTypes = {
   formData: PropTypes.oneOfType([PropTypes.object, PropTypes.func]).isRequired,
-  updateAdressDetail: PropTypes.any
 };
 
 export default Address;

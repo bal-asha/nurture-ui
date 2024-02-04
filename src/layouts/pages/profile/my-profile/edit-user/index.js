@@ -11,8 +11,8 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState ,useContext} from "react";
-
+import { useState ,useContext, useEffect} from "react";
+import { useNavigate } from "react-router-dom";
 // formik components
 import { Formik, Form } from "formik";
 
@@ -38,52 +38,120 @@ import UserInfo from "layouts/pages/profile/my-profile/edit-user/components/User
 import Address from "layouts/pages/profile/my-profile/edit-user/components/Address";
 import Socials from "layouts/pages/profile/my-profile/edit-user/components/Socials";
 import Profile from "layouts/pages/profile/my-profile/edit-user/components/Profile";
-import Header from "layouts/pages/profile/components/Header";
+import Header from "layouts/pages/profile/my-profile/Header";
 
 // NewUser layout schemas for form and form feilds
 import validations from "layouts/pages/profile/my-profile/edit-user/schemas/validations";
 import form from "layouts/pages/profile/my-profile/edit-user/schemas/form";
-import initialValues from "layouts/pages/profile/my-profile/edit-user/schemas/initialValues";
+//import initialValues from "layouts/pages/profile/my-profile/edit-user/schemas/initialValues";
 import { UserContext } from "custom/UserContext";
-
+import checkout from "layouts/pages/profile/my-profile/edit-user/schemas/form";
 import axiosInstance from "platform/axiosConfig.js";
 
 function getSteps() {
   return ["User Info", "Address"];
 }
 
-function getStepContent(stepIndex, formData,updateUserInfoDetail,updateAdressDetail) {
+function getStepContent(stepIndex, formData) {
   switch (stepIndex) {
     case 0:
-      return <UserInfo formData={formData} updateUserInfoDetail={updateUserInfoDetail} />;
+      return <><UserInfo formData={formData}  /> </>;
     case 1:
-      return <Address formData={formData} updateAdressDetail={updateAdressDetail}/>;
+      return <Address formData={formData}/>;
     default:
       return null;
   }
 }
 
 function NewUser() {
+  
+
+
   const [activeStep, setActiveStep] = useState(0);
   const steps = getSteps();
   const { formId, formField } = form;
   const currentValidation = validations[activeStep];
   const isLastStep = activeStep === steps.length - 1;
   const [data,setData]=useState("");
-  const [user,setUser]=useState("");
-  const [idProofType,setIdProofType]=useState("Adhar");
-  const [state,setState]=useState(null);
+  const [user,setUser]=useState(null);
+
+  // const [state,setState]=useState(null);
+
+  // const [initialState,setinitialState]=useState(null);
+  const route_to_home= useNavigate();
+  
   const userSessionDetail=useContext(UserContext);
+  const {
+    formField: {
+      userName,
+      idProofType, 
+      idDtls,
+      mobileNo,
+      address1,
+      address2,
+      city,
+      state,
+      zip,
+      userEmail
+
+    },
+  } = checkout;
+  
+  const [initialValuess,setIitialValues]= useState({
+    [userName.name]:null,
+    [idProofType.name]: null,
+    [idDtls.name]:null,
+    [mobileNo.name]:null,
+    [address1.name]: null,
+    [address2.name]: null,
+    [city.name]: null,
+    [state.name]: null,
+    [zip.name]: null,
+
+});
 
 
+  useEffect(()=>{
+    axiosInstance.get('/get-users').then(data => {
+      setUser(data);
+    
+        if(data.data.length!==0){
+     
+          setIitialValues({
+            [userName.name]:data.data.userName,
+            [idProofType.name]: data.data.idProofType,
+            [idDtls.name]:data.data.idDtls,
+            [mobileNo.name]:data.data.mobileNo,
+            [address1.name]: data.data.address.address1,
+            [address2.name]: data.data.address.address2,
+            [city.name]: data.data.address.city,
+            [state.name]: data.data.address.state,
+            [zip.name]: data.data.address.zip,
 
 
-  const updateUserInfoDetail =(idProofType_)=>{
-    setIdProofType(idProofType_);
-  }
-  const updateAdressDetail= (state_)=>{
-   setState(state_);
-  }
+        });
+
+
+      }else{
+        setIitialValues({
+          [userName.name]:"",
+          [idProofType.name]:"Adhaar",
+          [idDtls.name]:"",
+          [mobileNo.name]:"",
+          [address1.name]: "",
+          [address2.name]: "",
+          [city.name]: "",
+          [state.name]: "Andhra Pradesh",
+          [zip.name]: "",
+          });
+
+      }
+
+    }).catch((err) => {
+    console.error(err)
+    })
+
+  },[]);
 
   const sleep = (ms) =>
     new Promise((resolve) => {
@@ -92,13 +160,15 @@ function NewUser() {
   const handleBack = () => setActiveStep(activeStep - 1);
 
   const submitForm = async (values, actions) => {
+
+
     await sleep(1000);
 
     let userDetail=values;
     userDetail ={
       
       ...userDetail,  // Spread the previous state
-      idProofType: idProofType, // Add or update properties
+  
       userEmail: userSessionDetail.userEmail
     };
     let userDetaill ={     
@@ -109,24 +179,27 @@ function NewUser() {
         address1:userDetail.address1,
         address2:userDetail.address2,
         city:userDetail.city,
+        state:userDetail.state,
         zip:userDetail.zip
       },  
-      idProofType: idProofType, // Add or update properties
+      idProofType: userDetail.idProofType, // Add or update properties
       userEmail: userSessionDetail.userEmail
     };
     // eslint-disable-next-line no-alert
     alert(JSON.stringify(userDetaill, null, 2)) ;
 
     
-    const locationsUri = '/update-user';
-    axiosInstance.put(locationsUri,userDetaill).then(data => {setUser(data);
-      console.log("hiiii");
+
+    axiosInstance.put('/update-user',userDetaill).then(data => {
+      setUser(data);
+      alert(JSON.stringify("Submitted Sucessfully", null, 2)) ;
+      route_to_home("/pages/profile/my-profile");
     }).catch((err) => {
     console.error(err)
     });
+    
 
-  };
-
+    };
 
 
   const handleSubmit = (values, actions) => {
@@ -141,7 +214,7 @@ function NewUser() {
 
   return (
     <DashboardLayout>
-      <Header />
+      <Header user={userSessionDetail}/>
       <SoftBox py={3} mb={20}>
         <Grid container justifyContent="center" sx={{ height: "100%" }}>
           <Grid item xs={12} lg={8}>
@@ -152,12 +225,13 @@ function NewUser() {
                 </Step>
               ))}
             </Stepper>
+            { (initialValuess.userName !== null)? (
             <Formik
-              initialValues={initialValues}
+              initialValues={initialValuess}
               validationSchema={currentValidation}
               onSubmit={handleSubmit}
             >
-              {({ values, errors, touched, isSubmitting }) => (
+              {({ values, errors, touched, handleChange,isSubmitting }) => (
                 <Form id={formId} autoComplete="off">
                   <Card sx={{ height: "100%" }}>
                     <SoftBox p={2}>
@@ -167,7 +241,8 @@ function NewUser() {
                           touched,
                           formField,
                           errors,
-                        },updateUserInfoDetail,updateAdressDetail)}
+                          handleChange
+                        })}
                         <SoftBox mt={2} width="100%" display="flex" justifyContent="space-between">
                           {activeStep === 0 ? (
                             <SoftBox />
@@ -191,6 +266,7 @@ function NewUser() {
                 </Form>
               )}
             </Formik>
+            ) :( "") }
           </Grid>
         </Grid>
       </SoftBox>
