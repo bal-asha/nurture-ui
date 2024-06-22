@@ -12,6 +12,7 @@
 */
 
 import { useState ,useContext} from "react";
+import { useNavigate } from "react-router-dom";
 
 // formik components
 import { Formik, Form } from "formik";
@@ -34,41 +35,23 @@ import Footer from "examples/Footer";
 
 // NewUser page components
 // import UserInfo from "layouts/pages/users/new-user/components/UserInfo";
-import UserInfo from "layouts/pages/profile/my-profile/edit-user/components/UserInfo";
-import Address from "layouts/pages/profile/my-profile/edit-user/components/Address";
-import Socials from "layouts/pages/profile/my-profile/edit-user/components/Socials";
-import Profile from "layouts/pages/profile/my-profile/edit-user/components/Profile";
-import Header from "layouts/pages/profile/components/Header";
+
+import Header from "balAshaLayout/components/Header";
 
 // NewUser layout schemas for form and form feilds
-import validations from "layouts/pages/profile/my-profile/edit-user/schemas/validations";
-import form from "layouts/pages/profile/my-profile/edit-user/schemas/form";
-import initialValues from "layouts/pages/profile/my-profile/edit-user/schemas/initialValues";
+import validations from "balAshaLayout/my-profilee/ProfileUpdate/schemas/validations";
+import form from "balAshaLayout/my-profilee/ProfileUpdate/schemas/form";
+import initialValues from "balAshaLayout/my-profilee/ProfileUpdate/schemas/initialValues";
 import { UserContext } from "custom/UserContext";
 
 import axiosInstance from "platform/axiosConfig.js";
+import UserDetail from "./components/UserDetails";
 
-function getSteps() {
-  return ["User Info", "Address"];
-}
+function ProfileUpdate() {
 
-function getStepContent(stepIndex, formData,updateUserInfoDetail,updateAdressDetail) {
-  switch (stepIndex) {
-    case 0:
-      return <UserInfo formData={formData} updateUserInfoDetail={updateUserInfoDetail} />;
-    case 1:
-      return <Address formData={formData} updateAdressDetail={updateAdressDetail}/>;
-    default:
-      return null;
-  }
-}
-
-function NewUser() {
-  const [activeStep, setActiveStep] = useState(0);
-  const steps = getSteps();
+  const route_to_home= useNavigate();
   const { formId, formField } = form;
-  const currentValidation = validations[activeStep];
-  const isLastStep = activeStep === steps.length - 1;
+  const currentValidation = validations[0];
   const [data,setData]=useState("");
   const [user,setUser]=useState("");
   const [idProofType,setIdProofType]=useState("Adhar");
@@ -89,7 +72,6 @@ function NewUser() {
     new Promise((resolve) => {
       setTimeout(resolve, ms);
     });
-  const handleBack = () => setActiveStep(activeStep - 1);
 
   const submitForm = async (values, actions) => {
     await sleep(1000);
@@ -121,25 +103,21 @@ function NewUser() {
     axiosInstance.put('/update-user',userDetaill).then(data => {
       setUser(data);
       alert(JSON.stringify("Submitted Sucessfully", null, 2)) ;
-      route_to_home("/pages/profile/my-profilee");
+      route_to_home("/my-profile");
     }).catch((err) => {
     console.error(err)
     });
+
+
+    
 
   };
 
 
 
-
-
   const handleSubmit = (values, actions) => {
-    if (isLastStep) {
       submitForm(values, actions);
-    } else {
-      setActiveStep(activeStep + 1);
-      actions.setTouched({});
-      actions.setSubmitting(false);
-    }
+
   };
 
   return (
@@ -148,13 +126,7 @@ function NewUser() {
       <SoftBox py={3} mb={20}>
         <Grid container justifyContent="center" sx={{ height: "100%" }}>
           <Grid item xs={12} lg={8}>
-            <Stepper activeStep={activeStep} alternativeLabel>
-              {steps.map((label) => (
-                <Step key={label}>
-                  <StepLabel>{label}</StepLabel>
-                </Step>
-              ))}
-            </Stepper>
+
             <Formik
               initialValues={initialValues}
               validationSchema={currentValidation}
@@ -164,28 +136,20 @@ function NewUser() {
                 <Form id={formId} autoComplete="off">
                   <Card sx={{ height: "100%" }}>
                     <SoftBox p={2}>
-                      <SoftBox>
-                        {getStepContent(activeStep, {
-                          values,
-                          touched,
-                          formField,
-                          errors,
-                        },updateUserInfoDetail,updateAdressDetail)}
+                    <UserDetail formData={{ formField, values, errors, touched }} updateUserInfoDetail={updateUserInfoDetail} updateAdressDetail={updateAdressDetail} />
+                    
+                       <SoftBox>
                         <SoftBox mt={2} width="100%" display="flex" justifyContent="space-between">
-                          {activeStep === 0 ? (
+                    
                             <SoftBox />
-                          ) : (
-                            <SoftButton variant="gradient" color="light" onClick={handleBack}>
-                              back
-                            </SoftButton>
-                          )}
+                         
                           <SoftButton
                             // disabled={isSubmitting}
                             type="submit"
                             variant="gradient"
                             color="dark"
                           >
-                            {isLastStep ? "send" : "next"}
+                           send
                           </SoftButton>
                         </SoftBox>
                       </SoftBox>
@@ -202,4 +166,4 @@ function NewUser() {
   );
 }
 
-export default NewUser;
+export default ProfileUpdate;

@@ -103,8 +103,8 @@ import CreditCard from "examples/Icons/CreditCard";
 import BalAshaUser from "examples/Icons/BalAshaUser";
 
 
-import MyProfilee from "balAshaLayout//my-profilee";
-import EditUser from "./balAshaLayout/my-profilee/edit-user";
+import MyProfilee from "./balAshaLayout//my-profilee";
+import ProfileUpdate from "./balAshaLayout/my-profilee/ProfileUpdate";
 import AllowedUserOverview from "./balAshaLayout/user";
 
 
@@ -126,14 +126,14 @@ const routes = [
       {
         name: "My Profile",
         key: "my-profile",
-        route: "/pages/profile/my-profilee",
+        route: "/my-profilee",
         component: <MyProfilee />,
       },
       {
-        name: "Edit User",
-        key: "edit-user",
-        route: "/pages/users/edit-user",
-        component: <EditUser />,
+        name: "Update Profile",
+        key: "update-user",
+        route: "/my-profilee/ProfileUpdate",
+        component: <ProfileUpdate />,
       }
 
 
