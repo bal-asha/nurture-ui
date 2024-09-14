@@ -27,6 +27,7 @@ import PageLayout from "examples/LayoutContainers/PageLayout";
 
 // BalAsha - Nurture page layout routes
 import pageRoutes from "page.routes";
+import routes from "routes";
 
 // Images
 import pattern from "assets/images/shapes/pattern-lines.svg";
@@ -35,7 +36,7 @@ function IllustrationLayout({ color, header, title, description, illustration, c
   return (
     <PageLayout background="white">
       <DefaultNavbar
-        routes={pageRoutes}
+        routes={routes}
         action={{
           type: "external",
           route: "https://bal-asha.com/product/soft-ui-dashboard-react",

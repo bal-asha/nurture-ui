@@ -29,6 +29,9 @@ import SpaceShip from "examples/Icons/SpaceShip";
 // BalAsha - Nurture page layout routes
 import pageRoutes from "page.routes";
 
+// BalAsha - Nurture page layout routes
+import routes from "routes";
+
 // Images
 import curved9 from "assets/images/curved-images/curved9.jpg";
 
@@ -36,7 +39,7 @@ function Basic() {
   return (
     <PageLayout>
       <DefaultNavbar
-        routes={pageRoutes}
+        routes={routes}
         action={{
           type: "external",
           route: "https://balasha-nurture.web.app/product/soft-ui-dashboard-react",

@@ -34,6 +34,7 @@ import Footer from "layouts/authentication/components/Footer";
 
 // BalAsha - Nurture page layout routes
 import pageRoutes from "page.routes";
+import routes from "routes";
 
 // Images
 import error500 from "assets/images/illustrations/error-500.png";
@@ -44,7 +45,7 @@ function Error500() {
   return (
     <PageLayout white>
       <DefaultNavbar
-        routes={pageRoutes}
+        routes={routes}
         transparent
         action={{
           type: "external",

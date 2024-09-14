@@ -29,6 +29,7 @@ import DefaultNavbar from "examples/Navbars/DefaultNavbar";
 
 // BalAsha - Nurture page layout routes
 import pageRoutes from "page.routes";
+import routes from "routes";
 
 // Images
 import waves from "assets/images/shapes/waves-white.svg";
@@ -37,7 +38,7 @@ function Header({ tabValue, tabHandler }) {
   return (
     <>
       <DefaultNavbar
-        routes={pageRoutes}
+        routes={routes}
         action={{
           type: "external",
           route: "https://bal-asha.com/product/soft-ui-dashboard-react",

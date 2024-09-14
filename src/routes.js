@@ -3,8 +3,8 @@
 * BalAsha - Nurture - v4.0.2
 =========================================================
 
-* Product Page: https://balasha-nurture.web.app/product/soft-ui-dashboard-react
-* Copyright 2024 BalAsha - Nurture (https://balasha-nurture.web.app)
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
+* Copyright 2024 BalAsha - Nurture (https://www.creative-tim.com)
 
 =========================================================
 
@@ -53,7 +53,7 @@ import Invoice from "layouts/pages/account/invoice";
 import Security from "layouts/pages/account/security";
 import General from "layouts/pages/projects/general";
 import Timeline from "layouts/pages/projects/timeline";
-import Workflow from "layouts/pages/workFlow/src";
+// import Workflow from "layouts/pages/workFlow/src";
 import NewProject from "layouts/pages/projects/new-project";
 import Widgets from "layouts/pages/widgets";
 import Charts from "layouts/pages/charts";
@@ -92,6 +92,12 @@ import VerificationIllustration from "layouts/authentication/2-step-verification
 import Error404 from "layouts/authentication/error/404";
 import Error500 from "layouts/authentication/error/500";
 
+
+//Mumkin 
+
+import ChildRegistration from "child/child-registration";
+import WorkFlow from "workflow/workflow-management";
+
 // BalAsha - Nurture icons
 import Shop from "examples/Icons/Shop";
 import Office from "examples/Icons/Office";
@@ -104,7 +110,60 @@ import CreditCard from "examples/Icons/CreditCard";
 import BalAshaUser from "examples/Icons/BalAshaUser";
 import AllowedUserOverview from "./layouts/user";
 
+
 const routes = [
+
+
+  { type: "title", title: "Mumkin Pages", key:  "title-mumkin"  },
+
+  {
+    type: "collapse",
+    name: "Employee Management",
+    key: "user",
+    icon: <BalAshaUser size="12px"/>,
+    collapse: [
+      {
+        name: "Allowed Users",
+        key: "allowed-users",
+        route: "/user/allowedUsers",
+        component: <AllowedUserOverview />,
+      },
+    ],
+  },
+
+  { type: "collapse",
+    name: "Child Management",
+    key: "child",
+    icon: <BalAshaUser size="12px"/>,
+    collapse: [
+      {
+    name: "Child Registration",
+    key: "child-registration",
+    route: "/child/child-registration",
+    component: <ChildRegistration />,
+      },],
+
+  },
+
+  { type: "collapse",
+    name: "Workflow Management",
+    key: "workflow",
+    icon: <BalAshaUser size="12px"/>,
+    collapse: [
+      {
+    name: "Workflow",
+    key: "workflow-management",
+    route: "/workflow/workflow-management",
+    component: <WorkFlow />,
+      },],
+
+  },
+
+  { type: "divider", title: "Template Pages", key:  "template-pages"  },
+  { type: "divider", title: "Template Pages", key:  "template-pages"  },
+  { type: "divider", title: "Template Pages", key:  "template-pages"  },
+
+  { type: "title", title: "Template Pages", key:  "template-pages"  },
   {
     type: "collapse",
     name: "Dashboards",
@@ -117,12 +176,12 @@ const routes = [
         route: "/dashboards/default",
         component: <Default />,
       },
-      {
-        name: "Default",
-        key: "default",
-        route: "/dashboards/workflow",
-        component: <Workflow />,
-      },
+      // {
+      //   name: "Default",
+      //   key: "default",
+      //   route: "/dashboards/workflow",
+      //   component: <Workflow />,
+      // },
       {
         name: "Automotive",
         key: "automotive",
@@ -575,22 +634,22 @@ const routes = [
           {
             name: "Overview",
             key: "overview",
-            href: "https://balasha-nurture.web.app/learning-lab/react/overview/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/overview/soft-ui-dashboard/",
           },
           {
             name: "License",
             key: "license",
-            href: "https://balasha-nurture.web.app/learning-lab/react/license/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/license/soft-ui-dashboard/",
           },
           {
             name: "Quick Start",
             key: "quick-start",
-            href: "https://balasha-nurture.web.app/learning-lab/react/quick-start/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/quick-start/soft-ui-dashboard/",
           },
           {
             name: "Build Tools",
             key: "build-tools",
-            href: "https://balasha-nurture.web.app/learning-lab/react/build-tools/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/build-tools/soft-ui-dashboard/",
           },
         ],
       },
@@ -601,37 +660,37 @@ const routes = [
           {
             name: "Colors",
             key: "colors",
-            href: "https://balasha-nurture.web.app/learning-lab/react/colors/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/colors/soft-ui-dashboard/",
           },
           {
             name: "Grid",
             key: "grid",
-            href: "https://balasha-nurture.web.app/learning-lab/react/grid/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/grid/soft-ui-dashboard/",
           },
           {
             name: "Typography",
             key: "base-typography",
-            href: "https://balasha-nurture.web.app/learning-lab/react/base-typography/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/base-typography/soft-ui-dashboard/",
           },
           {
             name: "Borders",
             key: "borders",
-            href: "https://balasha-nurture.web.app/learning-lab/react/borders/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/borders/soft-ui-dashboard/",
           },
           {
             name: "Box Shadows",
             key: "box-shadows",
-            href: "https://balasha-nurture.web.app/learning-lab/react/box-shadows/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/box-shadows/soft-ui-dashboard/",
           },
           {
             name: "Functions",
             key: "functions",
-            href: "https://balasha-nurture.web.app/learning-lab/react/functions/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/functions/soft-ui-dashboard/",
           },
           {
             name: "Routing System",
             key: "routing-system",
-            href: "https://balasha-nurture.web.app/learning-lab/react/routing-system/soft-ui-dashboard/",
+            href: "https://www.creative-tim.com/learning-lab/react/routing-system/soft-ui-dashboard/",
           },
         ],
       },
@@ -646,87 +705,87 @@ const routes = [
       {
         name: "Alerts",
         key: "alerts",
-        href: "https://balasha-nurture.web.app/learning-lab/react/alerts/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/alerts/soft-ui-dashboard/",
       },
       {
         name: "Avatar",
         key: "avatar",
-        href: "https://balasha-nurture.web.app/learning-lab/react/avatar/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/avatar/soft-ui-dashboard/",
       },
       {
         name: "Badge",
         key: "badge",
-        href: "https://balasha-nurture.web.app/learning-lab/react/badge/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/badge/soft-ui-dashboard/",
       },
       {
         name: "Badge Dot",
         key: "badge-dot",
-        href: "https://balasha-nurture.web.app/learning-lab/react/badge-dot/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/badge-dot/soft-ui-dashboard/",
       },
       {
         name: "Box",
         key: "box",
-        href: "https://balasha-nurture.web.app/learning-lab/react/box/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/box/soft-ui-dashboard/",
       },
       {
         name: "Buttons",
         key: "buttons",
-        href: "https://balasha-nurture.web.app/learning-lab/react/buttons/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/buttons/soft-ui-dashboard/",
       },
       {
         name: "Date Picker",
         key: "date-picker",
-        href: "https://balasha-nurture.web.app/learning-lab/react/datepicker/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/datepicker/soft-ui-dashboard/",
       },
       {
         name: "Dropzone",
         key: "dropzone",
-        href: "https://balasha-nurture.web.app/learning-lab/react/dropzone/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/dropzone/soft-ui-dashboard/",
       },
       {
         name: "Editor",
         key: "editor",
-        href: "https://balasha-nurture.web.app/learning-lab/react/quill/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/quill/soft-ui-dashboard/",
       },
       {
         name: "Input",
         key: "input",
-        href: "https://balasha-nurture.web.app/learning-lab/react/input/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/input/soft-ui-dashboard/",
       },
       {
         name: "Pagination",
         key: "pagination",
-        href: "https://balasha-nurture.web.app/learning-lab/react/pagination/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/pagination/soft-ui-dashboard/",
       },
       {
         name: "Progress",
         key: "progress",
-        href: "https://balasha-nurture.web.app/learning-lab/react/progress/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/progress/soft-ui-dashboard/",
       },
       {
         name: "Select",
         key: "select",
-        href: "https://balasha-nurture.web.app/learning-lab/react/select/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/select/soft-ui-dashboard/",
       },
       {
         name: "Snackbar",
         key: "snackbar",
-        href: "https://balasha-nurture.web.app/learning-lab/react/snackbar/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/snackbar/soft-ui-dashboard/",
       },
       {
         name: "Social Button",
         key: "social-button",
-        href: "https://balasha-nurture.web.app/learning-lab/react/social-buttons/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/social-buttons/soft-ui-dashboard/",
       },
       {
         name: "Tag Input",
         key: "tag-input",
-        href: "https://balasha-nurture.web.app/learning-lab/react/tag-input/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/tag-input/soft-ui-dashboard/",
       },
       {
         name: "Typography",
         key: "typography",
-        href: "https://balasha-nurture.web.app/learning-lab/react/typography/soft-ui-dashboard/",
+        href: "https://www.creative-tim.com/learning-lab/react/typography/soft-ui-dashboard/",
       },
     ],
   },
@@ -737,7 +796,7 @@ const routes = [
     href: "https://github.com/bal-asha/nurture-ui/blob/main/CHANGELOG.md",
     icon: <CreditCard size="12px" />,
     noCollapse: true,
-  },
+  }
 ];
 
 export default routes;

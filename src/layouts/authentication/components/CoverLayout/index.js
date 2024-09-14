@@ -30,12 +30,13 @@ import Footer from "layouts/authentication/components/Footer";
 
 // BalAsha - Nurture page layout routes
 import pageRoutes from "page.routes";
+import routes from "routes";
 
 function CoverLayout({ color, header, title, description, image, top, children }) {
   return (
     <PageLayout background="white">
       <DefaultNavbar
-        routes={pageRoutes}
+        routes={routes}
         action={{
           type: "external",
           route: "https://bal-asha.com/product/soft-ui-dashboard-react",
