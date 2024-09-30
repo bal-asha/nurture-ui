@@ -1,4 +1,7 @@
-/**
+
+/* Unused File */
+
+/** 
 =========================================================
 * BalAsha - Nurture - v4.0.2
 =========================================================
@@ -30,6 +33,7 @@
 
 // BalAsha - Nurture icons
 import Shop from "examples/Icons/Shop";
+import BalAshaUser from "examples/Icons/BalAshaUser";
 import Office from "examples/Icons/Office";
 import Document from "examples/Icons/Document";
 import CustomerSupport from "examples/Icons/CustomerSupport";
@@ -37,6 +41,18 @@ import Cube from "examples/Icons/Cube";
 import SpaceShip from "examples/Icons/SpaceShip";
 
 const pageRoutes = [
+  {
+    name: "Employee Management",
+    key: "employee",
+    icon: <BalAshaUser size="10px"/>,
+    collapse: [
+      {
+        name: "Allowed Users",
+        key: "allowed-users",
+        route: "/user/allowedUsers",
+      },
+    ],
+  },
   {
     name: "Dashboards",
     key: "dashboards",
