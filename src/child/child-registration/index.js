@@ -28,6 +28,7 @@ import Accounts from "child/child-registration/components/Accounts";
 import Notifications from "child/child-registration/components/Notifications";
 import Sessions from "child/child-registration/components/Sessions";
 import DeleteAccount from "child/child-registration/components/DeleteAccount";
+import Stage1Info from "child/child-registration/components/Stage1Info";
 
 function ChildRegistration() {
   return (
@@ -42,6 +43,9 @@ function ChildRegistration() {
               <Grid container spacing={3}>
                 <Grid item xs={12}>
                   <Header />
+                </Grid>
+                <Grid item xs={12}>
+                  <Stage1Info />
                 </Grid>
                 <Grid item xs={12}>
                   <BasicInfo />
